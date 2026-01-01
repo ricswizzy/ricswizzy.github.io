@@ -2,6 +2,7 @@
 
 
 
+
 /**
  * Techie Bridge Website - Enhanced JavaScript
  * Mobile menu, smooth scrolling, form handling, and scroll effects
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================================================
-    // 3. WEBINAR FORM SUBMISSION WITH FEEDBACK
+    // 3. CONSULTATION FORM SUBMISSION WITH FEEDBACK
     // ============================================================================
     const webinarForm = document.getElementById('webinarForm');
     
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = Object.fromEntries(formData.entries());
             
             // Validate required fields
-            if (!data.schoolName || !data.contactPerson || !data.email) {
+            if (!data.name || !data.email || !data.currentLocation || !data.goal) {
                 showMessage('Please fill in all required fields', 'error');
                 resetButton(submitBtn, originalText);
                 return;
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (response.ok) {
                     // Success
-                    showMessage('Thank you! Your webinar request has been submitted. We\'ll contact you within 24 hours.', 'success');
+                    showMessage('Thank you! Your consultation request has been submitted. We\'ll contact you within 24 hours.', 'success');
                     
                     // Reset form
                     this.reset();
@@ -277,32 +278,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe service cards for animation
-    document.querySelectorAll('.service-card, .requirement-card, .pricing-card').forEach(card => {
+    document.querySelectorAll('.service-card, .requirement-card, .pricing-card, .audience-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
     
-    // Initialize on load
-    updateNavOnScroll();
-    
     // ============================================================================
-    // 6. SOCIAL MEDIA LINK ENHANCEMENTS
+    // 6. FORM INPUT ENHANCEMENTS
     // ============================================================================
-    document.querySelectorAll('.social-links a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert('This social media link is not yet set up. Please check back soon!');
-            }
-        });
-    });
-    
-    // ============================================================================
-    // 7. FORM INPUT ENHANCEMENTS
-    // ============================================================================
-    document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+    document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(input => {
         // Add focus effect
         input.addEventListener('focus', function() {
             this.parentElement.classList.add('focused');
@@ -316,4 +302,46 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Auto-resize textarea
         if (input.tagName === 'TEXTAREA') {
-            input.addEventListener
+            input.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+    });
+    
+    // ============================================================================
+    // 7. SOCIAL MEDIA LINK ENHANCEMENTS
+    // ============================================================================
+    document.querySelectorAll('.social-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('This social media link is not yet set up. Please check back soon!');
+            }
+        });
+    });
+    
+    // ============================================================================
+    // 8. PAYPAL BUTTON ENHANCEMENT
+    // ============================================================================
+    // Add loading state for PayPal buttons
+    document.querySelectorAll('.paypal-button-container').forEach(container => {
+        container.style.minHeight = '50px';
+        container.style.position = 'relative';
+        
+        // Add loading message while PayPal loads
+        if (!container.innerHTML.trim()) {
+            container.innerHTML = '<p style="text-align: center; color: #666; font-style: italic;">Loading payment options...</p>';
+        }
+    });
+    
+    // ============================================================================
+    // 9. INITIALIZE ON LOAD
+    // ============================================================================
+    updateNavOnScroll();
+    
+    // Add loaded class to body for CSS transitions
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
+});
