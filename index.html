@@ -1,422 +1,719 @@
-#index.html
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techie Bridge - Building Tech Careers in Germany</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Techie Bridge – Build Your Tech Career in Germany</title>
+    <meta name="description" content="Techie Bridge helps international talent build tech careers in Germany. Expert coaching for Ausbildung, IT jobs, and German workplace culture. Based in Neustadt in Holstein.">
+    <meta name="keywords" content="tech career Germany, international talent Germany, IT jobs Germany, Ausbildung IT, career coaching Germany, Fachinformatik, job search Germany">
+    <meta name="author" content="Techie Bridge – Eric">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Techie Bridge – Build Your Tech Career in Germany">
+    <meta property="og:description" content="Expert guidance for international talent pursuing IT careers in Germany. Real experience. Real results.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+        --primary:#2563eb; --primary-dark:#1d4ed8;
+        --secondary:#f59e0b; --secondary-dark:#d97706;
+        --accent:#10b981;
+        --text:#d1d5db; --text-muted:#94a3b8;
+        --card-bg:#1a1a1a; --card-bg2:#222;
+        --grad:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);
+        --grad-rev:linear-gradient(135deg,#f59e0b 0%,#667eea 100%);
+        --logo-grad:linear-gradient(135deg,#2563eb 0%,#f59e0b 100%);
+        --shadow:0 10px 25px rgba(0,0,0,.4);
+        --shadow-h:0 20px 40px rgba(37,99,235,.25);
+        --ease:all .4s cubic-bezier(.175,.885,.32,1.1);
+        --tap:48px;
+    }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#000; color:var(--text); line-height:1.7; overflow-x:hidden; -webkit-text-size-adjust:100%; }
+    .container { width:90%; max-width:1200px; margin:0 auto; padding:0 20px; }
+
+    /* gradient text */
+    .gt { background:var(--logo-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* section heading */
+    .sh { text-align:center; font-size:2.6rem; font-weight:800; display:inline-block; position:relative; left:50%; transform:translateX(-50%); margin-bottom:1rem; }
+    .sh::after { content:''; position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:70px; height:5px; background:var(--grad); border-radius:10px; }
+    .sub { text-align:center; max-width:740px; margin:1.8rem auto 3.5rem; color:var(--text-muted); font-size:1.05rem; line-height:1.6; }
+
+    /* ── NAV ── */
+    nav { background:rgba(0,0,0,.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); position:fixed; top:0; width:100%; z-index:1000; border-bottom:1px solid rgba(255,255,255,.08); transition:var(--ease); }
+    nav.scrolled { background:rgba(0,0,0,.97); box-shadow:0 6px 30px rgba(37,99,235,.18); }
+    nav .container { display:flex; justify-content:space-between; align-items:center; padding:1rem 20px; gap:1rem; }
+    .logo { font-size:1.6rem; font-weight:800; text-decoration:none; background:var(--logo-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; flex-shrink:0; transition:transform .3s; }
+    .logo:hover { transform:scale(1.04); }
+    .nav-links { display:flex; list-style:none; gap:1.6rem; align-items:center; }
+    .nav-links a { text-decoration:none; background:var(--logo-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:600; font-size:.92rem; position:relative; padding:.4rem 0; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; }
+    .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:3px; background:var(--grad); border-radius:10px; transition:width .35s; }
+    .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+    .nav-links a.active { font-weight:700; }
+    .menu-toggle { display:none; background:var(--grad); border:none; width:var(--tap); height:var(--tap); min-width:var(--tap); border-radius:12px; font-size:1.3rem; cursor:pointer; color:#fff; transition:var(--ease); align-items:center; justify-content:center; flex-shrink:0; }
+    .menu-toggle.active { background:var(--grad-rev); transform:rotate(90deg); }
+
+    /* ── HERO ── */
+    .hero { background:var(--grad); text-align:center; padding:11rem 0 7rem; margin-top:68px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80') center/cover; opacity:.12; mix-blend-mode:overlay; }
+    .hero .container { position:relative; z-index:2; }
+    .hero h1 { font-size:3.6rem; font-weight:800; color:#000; line-height:1.2; margin-bottom:1.4rem; text-shadow:2px 2px 10px rgba(0,0,0,.15); animation:fadeUp 1s ease both; }
+    .hero p { font-size:1.25rem; font-weight:600; color:#000; max-width:680px; margin:0 auto 2.8rem; opacity:.92; animation:fadeUp 1s .2s ease both; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+    .btn { display:inline-block; background:#000; color:var(--secondary); padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1.05rem; border:2px solid var(--secondary); min-height:var(--tap); transition:var(--ease); box-shadow:0 10px 30px rgba(0,0,0,.3); animation:fadeUp 1s .4s ease both; cursor:pointer; }
+    .btn:hover { background:var(--secondary); color:#000; transform:translateY(-4px) scale(1.04); box-shadow:0 18px 36px rgba(245,158,11,.4); }
+
+    /* ── ABOUT ── */
+    .about { padding:8rem 0; background:#000; position:relative; }
+    .about::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:var(--logo-grad); }
+    .about-content { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:3rem; }
+    .about-text h3 { font-size:2rem; margin-bottom:1.4rem; line-height:1.3; }
+    .about-text h4 { font-size:1.3rem; margin:1.8rem 0 .8rem; color:var(--secondary); }
+    .about-text p { margin-bottom:1.4rem; color:var(--text); font-size:1rem; }
+    .about-text ul { list-style:none; margin:1.8rem 0; }
+    .about-text li { display:flex; align-items:flex-start; gap:1rem; padding:.9rem 1rem; background:var(--card-bg); border-radius:12px; margin-bottom:.9rem; border:1px solid rgba(255,255,255,.08); transition:var(--ease); }
+    .about-text li:hover { transform:translateX(8px); background:var(--card-bg2); }
+    .about-text li i { color:var(--accent); font-size:1.2rem; margin-top:.2rem; flex-shrink:0; }
+    .about-image img { width:100%; border-radius:20px; box-shadow:var(--shadow-h); border:8px solid var(--card-bg); transform:perspective(1000px) rotateY(-5deg); transition:var(--ease); }
+    .about-image img:hover { transform:perspective(1000px) rotateY(0deg); }
+
+    /* ── REQUIREMENTS ── */
+    .requirements { padding:6rem 0; background:#080808; }
+    .requirements-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; max-width:1000px; margin:0 auto; }
+    .req-card { background:var(--card-bg); padding:2rem; border-radius:16px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.08); border-top:4px solid var(--primary); transition:var(--ease); }
+    .req-card:nth-child(2){border-top-color:var(--secondary)} .req-card:nth-child(3){border-top-color:var(--accent)}
+    .req-card:hover { transform:translateY(-10px); box-shadow:var(--shadow-h); background:var(--card-bg2); }
+    .req-icon { font-size:2.4rem; color:var(--primary); margin-bottom:.9rem; text-align:center; }
+    .req-card h3 { color:#e5e7eb; font-size:1.35rem; text-align:center; margin-bottom:1.3rem; }
+    .req-card ul { list-style:none; }
+    .req-card li { padding-left:1.5rem; position:relative; margin-bottom:.75rem; color:var(--text-muted); font-size:.93rem; line-height:1.5; word-wrap:break-word; overflow-wrap:break-word; hyphens:auto; }
+    .req-card li::before { content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700; }
+    .req-card li strong { color:#e5e7eb; }
+    .lw { word-break:break-word; display:inline-block; max-width:100%; }
+
+    /* ── SERVICES ── */
+    .services { padding:8rem 0; background:#000; }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem; }
+    .svc-card { background:#000; padding:2.5rem 2rem; border-radius:20px; text-align:center; border:2px solid var(--secondary); position:relative; overflow:hidden; transition:var(--ease); box-shadow:var(--shadow); }
+    .svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background:var(--grad); }
+    .svc-card:hover { transform:translateY(-14px); background:#0d0d0d; box-shadow:0 20px 40px rgba(245,158,11,.28); border-color:var(--secondary-dark); }
+    .svc-card i { font-size:3.2rem; color:var(--secondary); margin-bottom:1.3rem; transition:var(--ease); display:block; }
+    .svc-card:hover i { transform:scale(1.2) rotate(5deg); color:var(--secondary-dark); }
+    .svc-card h3 { color:var(--secondary); font-size:1.45rem; font-weight:700; margin-bottom:.9rem; }
+    .svc-card p { color:#e5e7eb; line-height:1.6; font-size:.97rem; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding:8rem 0; background:#040404; position:relative; }
+    .testimonials::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--grad); }
+    .test-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:2rem; }
+    .test-card { background:var(--card-bg); border-radius:20px; padding:2rem; border:1px solid rgba(255,255,255,.07); position:relative; overflow:hidden; transition:var(--ease); box-shadow:var(--shadow); }
+    .test-card::before { content:'"'; position:absolute; top:8px; right:18px; font-size:5rem; color:var(--primary); opacity:.1; font-family:Georgia,serif; line-height:1; pointer-events:none; }
+    .test-card:hover { transform:translateY(-8px); background:var(--card-bg2); border-color:rgba(37,99,235,.3); }
+    .test-stars { color:var(--secondary); letter-spacing:2px; margin-bottom:.9rem; }
+    .test-text { color:var(--text); font-size:.97rem; line-height:1.7; margin-bottom:1.4rem; font-style:italic; }
+    .test-author { display:flex; align-items:center; gap:.9rem; border-top:1px solid rgba(255,255,255,.07); padding-top:1rem; }
+    .test-av { width:44px; height:44px; min-width:44px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:800; color:#fff; }
+    .test-info strong { display:block; color:#e5e7eb; font-size:.97rem; }
+    .test-info span { color:var(--text-muted); font-size:.83rem; }
+
+    /* ── PRICING ── */
+    .pricing { padding:8rem 0; background:#060606; }
+    .pricing-hdr { text-align:center; margin-bottom:3.5rem; }
+    .pricing-hdr h2 { font-size:2.6rem; font-weight:800; display:inline-block; position:relative; margin-bottom:1rem; }
+    .pricing-hdr h2::after { content:''; position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:70px; height:5px; background:var(--grad); border-radius:10px; }
+    .pricing-hdr .sub { margin-top:2rem; }
+    .aud-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2.5rem; margin:4rem 0; }
+    .aud-card { background:var(--card-bg); padding:2.5rem 2rem; border-radius:20px; text-align:center; border:2px solid rgba(255,255,255,.08); position:relative; overflow:hidden; transition:var(--ease); box-shadow:var(--shadow); }
+    .aud-card::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background:var(--grad); }
+    .aud-card:hover { transform:translateY(-10px); background:var(--card-bg2); }
+    .aud-card i { font-size:3rem; margin-bottom:1.4rem; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:inline-block; transition:var(--ease); }
+    .aud-card:hover i { transform:scale(1.1) rotate(5deg); }
+    .aud-card h3 { color:#e5e7eb; font-size:1.35rem; margin-bottom:.9rem; }
+    .aud-card p { color:var(--text-muted); line-height:1.6; font-size:.95rem; }
+    .cta-intro-box { background:var(--card-bg); padding:1.6rem 2.5rem; border-radius:14px; margin:3rem 0; text-align:center; border:1px solid rgba(255,255,255,.08); border-left:5px solid var(--accent); }
+    .cta-intro { font-size:1.1rem; color:var(--text); margin:0; line-height:1.6; }
+    .cta-intro strong { color:var(--primary); }
+    .price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(265px,1fr)); gap:2rem; margin-bottom:4rem; }
+    .pc { background:var(--card-bg); border-radius:20px; padding:2rem; border:2px solid rgba(255,255,255,.08); position:relative; display:flex; flex-direction:column; transition:var(--ease); box-shadow:var(--shadow); }
+    .pc:hover { transform:translateY(-10px); background:var(--card-bg2); box-shadow:var(--shadow-h); }
+    .pc.feat { border-color:var(--secondary); transform:scale(1.03); }
+    .pc.feat:hover { transform:scale(1.03) translateY(-10px); }
+    .pc.prem { border-color:var(--primary); }
+    .badge { position:absolute; top:-12px; right:18px; background:var(--grad); color:#fff; padding:.4rem 1.2rem; border-radius:20px; font-size:.82rem; font-weight:700; white-space:nowrap; }
+    .pc-hdr { text-align:center; margin-bottom:1.5rem; padding-bottom:1.4rem; border-bottom:2px solid rgba(255,255,255,.08); }
+    .pc-hdr h3 { color:#e5e7eb; font-size:1.35rem; margin-bottom:.9rem; }
+    .price-num { font-size:2.4rem; font-weight:800; color:var(--primary); }
+    .price-num span { font-size:.95rem; color:var(--text-muted); font-weight:400; }
+    .pc-body { flex:1; display:flex; flex-direction:column; }
+    .pc-body > p { font-weight:600; color:#e5e7eb; margin-bottom:1.1rem; font-size:1rem; }
+    .pc-body ul { list-style:none; margin-bottom:1.2rem; }
+    .pc-body li { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:.75rem; color:var(--text-muted); font-size:.93rem; }
+    .pc-body li .fa-check { color:var(--accent); margin-top:.25rem; flex-shrink:0; }
+    .pkg-faq { background:rgba(255,255,255,.04); border-radius:10px; padding:1rem; margin-bottom:1.2rem; border:1px solid rgba(255,255,255,.07); }
+    .pkg-faq-row { display:flex; align-items:flex-start; gap:.65rem; margin-bottom:.65rem; font-size:.86rem; color:var(--text-muted); line-height:1.5; }
+    .pkg-faq-row:last-child{margin-bottom:0}
+    .pkg-faq-row i { color:var(--secondary); margin-top:.2rem; flex-shrink:0; width:14px; }
+    .pkg-faq-row strong { color:#d1d5db; }
+    .pp-sec { border-top:1px solid rgba(255,255,255,.08); padding-top:1.2rem; margin-top:auto; }
+    .pp-sec h4 { color:#e5e7eb; margin-bottom:.9rem; display:flex; align-items:center; gap:.7rem; font-size:.97rem; }
+    .pp-wrap { text-align:center; min-height:50px; }
+    .pay-note { font-size:.83rem; color:var(--text-muted); margin-top:.6rem; font-style:italic; }
+    .cta-box { background:var(--card-bg); max-width:800px; margin:0 auto; padding:3rem; border-radius:20px; text-align:center; border:2px dashed var(--primary); box-shadow:var(--shadow); }
+    .cta-box h3 { font-size:1.9rem; margin-bottom:.9rem; }
+    .cta-box > p { margin-bottom:2rem; color:var(--text); line-height:1.6; }
+    .success-banner { background:linear-gradient(135deg,#064e3b,#065f46); border:2px solid #10b981; border-radius:16px; padding:2rem; margin-bottom:2rem; text-align:left; }
+    .success-inner { display:flex; gap:1.2rem; align-items:flex-start; }
+    .success-icon { font-size:2.4rem; color:#10b981; flex-shrink:0; margin-top:.1rem; }
+    .success-text h4 { font-size:1.25rem; color:#d1fae5; margin-bottom:.5rem; }
+    .success-text p { color:#a7f3d0; font-size:.93rem; line-height:1.6; margin-bottom:.4rem; }
+    .success-text p:last-child{margin-bottom:0}
+    .success-text a { color:#10b981; font-weight:700; text-decoration:underline; }
+    .wform { max-width:600px; margin:2rem auto 0; text-align:left; }
+    .fg { margin-bottom:1.3rem; }
+    .fg label { display:block; margin-bottom:.45rem; font-weight:600; color:#e5e7eb; font-size:.93rem; }
+    .fg input, .fg select, .fg textarea { width:100%; padding:.85rem 1rem; border:2px solid rgba(255,255,255,.18); border-radius:10px; font-family:inherit; font-size:16px; background:#000; color:var(--text); transition:var(--ease); min-height:var(--tap); }
+    .fg textarea { min-height:90px; resize:vertical; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,.22); background:#0a0a0a; }
+    .form-note { margin-top:.9rem; font-size:.87rem; color:var(--text-muted); text-align:center; }
+
+    /* ── FAQ ── */
+    .faq { padding:8rem 0; background:#0a0a0a; }
+    .faq-link { color:var(--primary); font-weight:600; text-decoration:underline; }
+    .faq-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:3rem; align-items:start; }
+    .faq-cat { font-size:1.1rem; color:var(--secondary); margin-bottom:1.4rem; display:flex; align-items:center; gap:.7rem; padding-bottom:.7rem; border-bottom:2px solid rgba(245,158,11,.3); }
+    .faq-item { border:1px solid rgba(255,255,255,.07); border-radius:14px; margin-bottom:.9rem; overflow:hidden; transition:border-color .3s; }
+    .faq-item:hover { border-color:rgba(37,99,235,.3); }
+    .faq-q { width:100%; background:var(--card-bg); border:none; padding:1.05rem 1.15rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; cursor:pointer; color:#e5e7eb; font-size:.93rem; font-weight:600; font-family:inherit; text-align:left; transition:background .25s; min-height:var(--tap); line-height:1.4; }
+    .faq-q:hover { background:var(--card-bg2); }
+    .faq-q[aria-expanded="true"] { background:var(--card-bg2); color:var(--primary); }
+    .faq-q i { flex-shrink:0; font-size:.85rem; color:var(--primary); transition:transform .35s; }
+    .faq-q[aria-expanded="true"] i { transform:rotate(180deg); color:var(--secondary); }
+    .faq-a { background:#0e0e0e; max-height:0; overflow:hidden; transition:max-height .4s ease,padding .3s ease; padding:0 1.15rem; }
+    .faq-a.open { max-height:500px; padding:1.15rem; }
+    .faq-a p { color:var(--text-muted); font-size:.93rem; line-height:1.7; margin:0; }
+    .faq-a a { color:var(--primary); font-weight:600; text-decoration:underline; }
+
+    /* ── CONTACT ── */
+    .contact { padding:8rem 0; background:#060606; }
+    .contact-content { display:grid; grid-template-columns:1fr; gap:3rem; max-width:780px; margin:0 auto; text-align:center; }
+    .contact-info h3 { color:var(--primary); font-size:1.9rem; margin-bottom:1.8rem; }
+    .contact-info > p { color:var(--text); }
+    .c-details { max-width:580px; margin:1.8rem auto; }
+    .c-details p { margin-bottom:1.1rem; display:flex; align-items:center; justify-content:center; gap:1rem; font-size:1.05rem; flex-wrap:wrap; color:var(--text); }
+    .c-details i { color:var(--primary); width:22px; text-align:center; }
+    .c-details a { color:var(--primary); text-decoration:none; font-weight:600; border-bottom:2px solid transparent; padding-bottom:2px; transition:var(--ease); }
+    .c-details a:hover { color:var(--secondary); border-bottom-color:var(--secondary); }
+    .c-deco { display:flex; justify-content:center; gap:2.5rem; margin-top:4rem; flex-wrap:wrap; }
+    .deco-item { display:flex; flex-direction:column; align-items:center; gap:.9rem; padding:1.8rem 2rem; background:var(--card-bg); border-radius:20px; border:1px solid rgba(255,255,255,.08); min-width:150px; text-align:center; transition:var(--ease); box-shadow:var(--shadow); }
+    .deco-item:hover { transform:translateY(-10px); background:var(--card-bg2); }
+    .deco-item i { font-size:2.6rem; color:var(--primary); transition:var(--ease); }
+    .deco-item:hover i { color:var(--secondary); transform:scale(1.1) rotate(10deg); }
+    .deco-item span { font-size:1rem; font-weight:700; color:#e5e7eb; text-transform:uppercase; letter-spacing:1px; }
+
+    /* ── FOOTER ── */
+    footer { background:#000; color:#fff; padding:2.5rem 0; text-align:center; border-top:1px solid rgba(255,255,255,.08); }
+    footer .container { display:flex; flex-direction:column; align-items:center; gap:1.4rem; }
+    footer p { color:var(--text-muted); opacity:.8; max-width:580px; line-height:1.6; font-size:.93rem; }
+    .soc { display:flex; gap:1.1rem; flex-wrap:wrap; justify-content:center; }
+    .soc a { display:inline-flex; align-items:center; justify-content:center; width:var(--tap); height:var(--tap); background:rgba(255,255,255,.1); color:#fff; font-size:1.2rem; border-radius:50%; border:2px solid transparent; transition:var(--ease); }
+    .soc a:hover { background:var(--grad); transform:translateY(-4px) rotate(10deg); border-color:#fff; }
+
+    /* ── RESPONSIVE 992 ── */
+    @media(max-width:992px){
+        .about-content{grid-template-columns:1fr;gap:3rem}
+        .about-image img{transform:none}
+        .faq-grid{grid-template-columns:1fr}
+        .hero h1{font-size:2.9rem}
+    }
+    /* ── RESPONSIVE 768 ── */
+    @media(max-width:768px){
+        .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(0,0,0,.98);padding:1rem 0;border-radius:0 0 16px 16px;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 20px 40px rgba(0,0,0,.6);gap:0;max-height:calc(100vh - 68px);overflow-y:auto}
+        .nav-links.active{display:flex}
+        .nav-links li{width:100%}
+        .nav-links a{display:flex;align-items:center;padding:.9rem 1.4rem;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.05);border-radius:0;width:100%;min-height:var(--tap)}
+        .nav-links li:last-child a{border-bottom:none}
+        .nav-links a::after{display:none}
+        .nav-links a:hover,.nav-links a.active{background:rgba(37,99,235,.14);padding-left:1.8rem}
+        .menu-toggle{display:flex}
+        .hero{padding:8.5rem 0 5rem}
+        .hero h1{font-size:2.1rem}
+        .hero p{font-size:1rem}
+        .about,.services,.testimonials,.requirements,.pricing,.faq,.contact{padding:5rem 0}
+        .sh{font-size:2rem}
+        .services-grid{grid-template-columns:1fr}
+        .svc-card{max-width:460px;margin:0 auto;width:100%}
+        .test-grid{grid-template-columns:1fr}
+        .price-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto 3rem}
+        .pc.feat{transform:none}
+        .pc.feat:hover{transform:translateY(-10px)}
+        .aud-grid{grid-template-columns:1fr;max-width:460px;margin:3rem auto}
+        .cta-box{padding:2rem 1.2rem}
+        .cta-box h3{font-size:1.6rem}
+        .requirements-grid{grid-template-columns:1fr}
+        .success-inner{flex-direction:column;align-items:center;text-align:center}
+        .c-deco{flex-direction:column;align-items:center;gap:1.4rem}
+        .deco-item{width:100%;max-width:280px}
+        .c-details p{flex-direction:column;text-align:center;gap:.35rem}
+        .btn{width:100%;text-align:center}
+    }
+    /* ── RESPONSIVE 480 ── */
+    @media(max-width:480px){
+        html{font-size:15px}
+        .container{width:95%;padding:0 10px}
+        .hero h1{font-size:1.85rem}
+        .logo{font-size:1.35rem}
+        .sh{font-size:1.8rem}
+        .pc{padding:1.5rem}
+        .test-card{padding:1.4rem}
+        .faq-q{font-size:.88rem;padding:.95rem 1rem}
+    }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">Techie Bridge</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#requirements">Requirements</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Building Tech Careers in Germany</h1>
-            <p>From anywhere to everywhere. We guide international talent to success in Europe's strongest tech market.</p>
-            <a href="#pricing" class="btn">Explore Services</a>
-        </div>
-    </section>
+<!-- NAV -->
+<nav id="mainNav">
+    <div class="container">
+        <a href="#home" class="logo">Techie Bridge</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Our Story</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Bridging Knowledge, Building Careers</h3>
-                    <p><strong>Welcome. My name is Eric, and I understand your journey because I am on it.</strong></p>
-                    <p>I moved from Nigeria to Germany with a dream to build a life in technology. I know firsthand the challenges of navigating a new education system, a different job market, and a unique culture—all while mastering a new language. I am currently a student of <em>Fachinformatik</em>, turning that dream into a certified skill set in Germany's renowned tech industry.</p>
-                    <p>But my goal is bigger than my own success. I see a powerful opportunity to build a bridge.</p>
-                    
-                    <h4>Our Vision: Empowering International Tech Talent</h4>
-                    <p>Techie Bridge exists to empower international talent—whether arriving from abroad or already navigating life in Germany—to build successful tech careers in Europe's strongest market.</p>
-                    
-                    <h4>How We Help: Targeted Guidance & Support</h4>
-                    <p>We provide the practical guidance I wish I had when I started. Our services are built on real experience and are designed for tangible results:</p>
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container">
+        <h1>Building Tech Careers in Germany</h1>
+        <p>From anywhere to everywhere. We guide international talent to success in Europe's strongest tech market.</p>
+        <a href="#pricing" class="btn">Explore Services</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="sh gt">Our Story</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 class="gt">Bridging Knowledge, Building Careers</h3>
+                <p><strong>Welcome. My name is Eric, and I understand your journey because I am on it.</strong></p>
+                <p>I moved from Nigeria to Germany with a dream to build a life in technology. I know firsthand the challenges of navigating a new education system, a different job market, and a unique culture—all while mastering a new language. I am currently a student of <em>Fachinformatik für Systemintegration</em>, turning that dream into a certified skill set in Germany's renowned tech industry.</p>
+                <p>But my goal is bigger than my own success. I see a powerful opportunity to build a bridge.</p>
+                <h4>Our Vision: Empowering International Tech Talent</h4>
+                <p>Techie Bridge exists to empower international talent—whether arriving from abroad or already navigating life in Germany—to build successful tech careers in Europe's strongest market.</p>
+                <h4>How We Help: Targeted Guidance & Support</h4>
+                <p>We provide the practical guidance I wish I had when I started. Our services are built on real experience and are designed for tangible results:</p>
+                <ul>
+                    <li><i class="fas fa-user-graduate"></i> <strong>For Career Changers & Graduates in Germany</strong>: Master the German job search, from decoding job ads to excelling in cultural interviews.</li>
+                    <li><i class="fas fa-passport"></i> <strong>For Talent Relocating to Germany</strong>: A complete roadmap focused on application strategies and pre-arrival preparation.</li>
+                    <li><i class="fas fa-hands-helping"></i> <strong>Cultural & Professional Mentoring</strong> to confidently navigate your new environment and workplace.</li>
+                </ul>
+                <p><strong>Why It Works:</strong> Our approach is not theoretical. It is built on the lived experience of crossing this bridge successfully.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="International collaboration in technology" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section id="requirements" class="requirements">
+    <div class="container">
+        <h2 class="sh gt">Key Requirements for Tech Careers in Germany</h2>
+        <p class="sub">Understanding these fundamentals is crucial whether you're applying from abroad or already living in Germany.</p>
+        <div class="requirements-grid">
+            <div class="req-card">
+                <div class="req-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Educational Foundation</h3>
+                <ul>
+                    <li><strong>Recognized Qualifications</strong> (degrees, certifications, or proven skills)</li>
+                    <li><strong>For Ausbildung (Apprenticeship)</strong>: Secondary school certificate is sufficient</li>
+                    <li><strong>University applicants need</strong> <span class="lw">Hochschulzugangsberechtigung</span></li>
+                    <li><strong>Technical skills portfolio</strong> or project experience</li>
+                </ul>
+            </div>
+            <div class="req-card">
+                <div class="req-icon"><i class="fas fa-language"></i></div>
+                <h3>Language Proficiency</h3>
+                <ul>
+                    <li><strong>Minimum B1 Level</strong> for most opportunities</li>
+                    <li><strong>B2/C1 Level</strong> significantly increases job prospects</li>
+                    <li>Certified by: <strong>Goethe-Institut, TestDaF, or Telc</strong></li>
+                    <li>English-only roles exist but are more competitive</li>
+                </ul>
+            </div>
+            <div class="req-card">
+                <div class="req-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>Cultural & Practical Preparation</h3>
+                <ul>
+                    <li><strong>Understanding German workplace culture</strong> and norms</li>
+                    <li><strong>Application documents (Lebenslauf, Anschreiben)</strong> in correct German format</li>
+                    <li><strong>Networking strategies</strong> for the German tech industry</li>
+                    <li><strong>Industry-specific knowledge</strong> of the German tech sector</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="sh gt">Our Services</h2>
+        <p class="sub" style="margin-top:2.5rem">Practical support built on lived experience — for every stage of your journey.</p>
+        <div class="services-grid">
+            <div class="svc-card"><i class="fas fa-road"></i><h3>Career Pathfinding</h3><p>Personalized guidance for international talents pursuing tech careers in Germany—from application strategy for those abroad to job search mastery for those already here.</p></div>
+            <div class="svc-card"><i class="fas fa-graduation-cap"></i><h3>Education & Integration</h3><p>Teaching relevant tech skills and German workplace culture to prepare you for success in the European tech market, whether you're new to Germany or deepening your roots.</p></div>
+            <div class="svc-card"><i class="fas fa-laptop-code"></i><h3>Business Tech Support</h3><p>Reliable technology setup, troubleshooting, and support for small businesses and startups to help them operate efficiently in the German market.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2 class="sh gt">What People Are Saying</h2>
+        <p class="sub">Real stories from international talents who crossed the bridge.</p>
+        <div class="test-grid">
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"Eric helped me understand exactly what German employers look for. His advice on structuring my Lebenslauf was a game-changer — I got my first interview within two weeks of applying his tips."</p><div class="test-author"><div class="test-av">A</div><div class="test-info"><strong>Adaeze O.</strong><span>IT Support Specialist · Lagos → Hamburg</span></div></div></div>
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"I had no idea how the Ausbildung system worked before Techie Bridge. The session gave me a clear roadmap. I'm now enrolled in a Fachinformatik program in Berlin. Worth every cent!"</p><div class="test-author"><div class="test-av">K</div><div class="test-info"><strong>Kwame A.</strong><span>Fachinformatik Student · Accra → Berlin</span></div></div></div>
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"The cultural coaching was something I didn't even know I needed. Understanding how German workplace communication works helped me fit in so much faster. Eric speaks from real experience."</p><div class="test-author"><div class="test-av">P</div><div class="test-info"><strong>Priya M.</strong><span>Software Developer · Chennai → Munich</span></div></div></div>
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"I was skeptical at first, but the free consultation alone gave me more clarity than months of Googling. Eric is patient, honest, and actually knows what he's talking about."</p><div class="test-author"><div class="test-av">T</div><div class="test-info"><strong>Tunde B.</strong><span>Career Changer · Abuja → Frankfurt</span></div></div></div>
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"The Tech Bridge Mastery package exceeded my expectations. The portfolio guidance helped me land a junior developer role within 3 months. I strongly recommend this to anyone serious about Germany."</p><div class="test-author"><div class="test-av">N</div><div class="test-info"><strong>Nadia E.</strong><span>Junior Developer · Cairo → Stuttgart</span></div></div></div>
+            <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"The group sessions in Cultural Bridge Monthly were amazing for community. Meeting others on the same journey was incredibly motivating. Eric facilitates in a way that makes everyone feel comfortable."</p><div class="test-author"><div class="test-av">S</div><div class="test-info"><strong>Samuel D.</strong><span>Systems Admin · Nairobi → Cologne</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+    <div class="container">
+        <div class="pricing-hdr">
+            <h2 class="gt">Your Bridge to a German Tech Career</h2>
+            <p class="sub">Whether you're starting your journey from abroad or navigating the system as an international in Germany, we provide the targeted guidance you need to succeed.</p>
+        </div>
+
+        <div class="aud-grid">
+            <div class="aud-card"><i class="fas fa-globe-africa"></i><h3>For Talent Relocating to Germany</h3><p>Get a complete roadmap to understand requirements, prepare documents, and build a compelling profile for German educational and career opportunities.</p></div>
+            <div class="aud-card"><i class="fas fa-user-graduate"></i><h3>For Internationals Already in Germany</h3><p>You've made it to Germany. Now, let's conquer the job market. We help you decode workplace culture, refine applications for local employers, and ace technical interviews.</p></div>
+        </div>
+
+        <div class="cta-intro-box">
+            <p class="cta-intro">Start with our <strong>free introductory consultation</strong> to identify your best path forward, then choose a focused service package below.</p>
+        </div>
+
+        <div class="price-grid">
+            <!-- Package 1 -->
+            <div class="pc">
+                <div class="pc-hdr"><h3>Pathfinder Workshop</h3><div class="price-num">€25<span>/session</span></div></div>
+                <div class="pc-body">
+                    <p><strong>Live Workshop: "Tech Careers in Germany 101"</strong></p>
                     <ul>
-                        <li><i class="fas fa-user-graduate"></i> <strong>For Career Changers & Graduates in Germany</strong>: Master the German job search, from decoding job ads to excelling in cultural interviews.</li>
-                        <li><i class="fas fa-passport"></i> <strong>For Talent Relocating to Germany</strong>: A complete roadmap focused on application strategies and pre-arrival preparation.</li>
-                        <li><i class="fas fa-hands-helping"></i> <strong>Cultural & Professional Mentoring</strong> to confidently navigate your new environment and workplace.</li>
+                        <li><i class="fas fa-check"></i> Live workshop with Q&amp;A</li>
+                        <li><i class="fas fa-check"></i> Personalized roadmap</li>
+                        <li><i class="fas fa-check"></i> Understanding German tech job market</li>
+                        <li><i class="fas fa-check"></i> Basic application strategy</li>
                     </ul>
-                    
-                    <p><strong>Why It Works:</strong> Our approach is not theoretical. It is built on the lived experience of crossing this bridge successfully. This firsthand understanding is equally valuable whether you are planning your move to Germany or are already here and seeking to pivot into its thriving tech industry.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="International collaboration in technology">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirements Section - FIXED: Hochschulzugangsberechtigung text -->
-    <section id="requirements" class="requirements">
-        <div class="container">
-            <h2>Key Requirements for Tech Careers in Germany</h2>
-            <p class="section-subtitle">Understanding these fundamentals is crucial whether you're applying from abroad or already living in Germany.</p>
-            
-            <div class="requirements-grid">
-                <div class="requirement-card">
-                    <div class="requirement-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                    <div class="pkg-faq">
+                        <div class="pkg-faq-row"><i class="fas fa-clock"></i><span><strong>Session length:</strong> 60 minutes (live workshop + Q&amp;A)</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-envelope"></i><span><strong>After payment:</strong> Confirmation email + scheduling link within 2 hours</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-video"></i><span><strong>Format:</strong> Online via Zoom or Google Meet</span></div>
                     </div>
-                    <h3>Educational Foundation</h3>
-                    <ul>
-                        <li><strong>Recognized Qualifications</strong> (degrees, certifications, or proven skills)</li>
-                        <li><strong>For Ausbildung (Apprenticeship)</strong>: Secondary school certificate is sufficient</li>
-                        <li><strong>University applicants need</strong> <span class="long-word">Hochschulzugangsberechtigung</span></li>
-                        <li><strong>Technical skills portfolio</strong> or project experience</li>
-                    </ul>
-                </div>
-                
-                <div class="requirement-card">
-                    <div class="requirement-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Language Proficiency</h3>
-                    <ul>
-                        <li><strong>Minimum B1 Level</strong> for most opportunities</li>
-                        <li><strong>B2/C1 Level</strong> significantly increases job prospects</li>
-                        <li>Certified by: <strong>Goethe-Institut, TestDaF, or Telc</strong></li>
-                        <li>English-only roles exist but are more competitive</li>
-                    </ul>
-                </div>
-                
-                <div class="requirement-card">
-                    <div class="requirement-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Cultural & Practical Preparation</h3>
-                    <ul>
-                        <li><strong>Understanding German workplace culture</strong> and norms</li>
-                        <li><strong>Application documents (Lebenslauf, Anschreiben)</strong> in correct German format</li>
-                        <li><strong>Networking strategies</strong> for the German tech industry</li>
-                        <li><strong>Industry-specific knowledge</strong> of the German tech sector</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-road"></i>
-                    <h3>Career Pathfinding</h3>
-                    <p>Personalized guidance for international talents pursuing tech careers in Germany—from application strategy for those abroad to job search mastery for those already here.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Education & Integration</h3>
-                    <p>Teaching relevant tech skills and German workplace culture to prepare you for success in the European tech market, whether you're new to Germany or deepening your roots.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Business Tech Support</h3>
-                    <p>Reliable technology setup, troubleshooting, and support for small businesses and startups to help them operate efficiently in the German market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section - FIXED: Proper styling added -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="pricing-header-section">
-                <h2>Your Bridge to a German Tech Career</h2>
-                <p class="section-subtitle">Whether you're starting your journey from abroad or navigating the system as an international in Germany, we provide the targeted guidance you need to succeed.</p>
-            </div>
-            
-            <div class="audience-highlight">
-                <div class="audience-card">
-                    <i class="fas fa-globe-africa"></i>
-                    <h3>For Talent Relocating to Germany</h3>
-                    <p>Get a complete roadmap to understand requirements, prepare documents, and build a compelling profile for German educational and career opportunities.</p>
-                </div>
-                <div class="audience-card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>For Internationals Already in Germany</h3>
-                    <p>You've made it to Germany. Now, let's conquer the job market. We help you decode workplace culture, refine applications for local employers, and ace technical interviews.</p>
-                </div>
-            </div>
-            
-            <div class="cta-intro-box">
-                <p class="cta-intro">Start with our <strong>free introductory consultation</strong> to identify your best path forward, then choose a focused service package below.</p>
-            </div>
-            
-            <div class="pricing-grid">
-                <!-- Package 1 -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Pathfinder Workshop</h3>
-                        <div class="price">€25<span>/session</span></div>
-                    </div>
-                    <div class="pricing-body">
-                        <p><strong>Live Workshop: "Tech Careers in Germany 101"</strong></p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Live workshop with Q&A</li>
-                            <li><i class="fas fa-check"></i> Personalized roadmap</li>
-                            <li><i class="fas fa-check"></i> Understanding German tech job market</li>
-                            <li><i class="fas fa-check"></i> Basic application strategy</li>
-                        </ul>
-                        
-                        <div class="paypal-section">
-                            <h4><i class="fab fa-paypal"></i> Secure Payment - €25</h4>
-                            <div class="paypal-button-container">
-                                <div>
-                                    <style>.pp-J4BRQW8H5Q6MY{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                                    <form action="https://www.paypal.com/ncp/payment/J4BRQW8H5Q6MY" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                                        <input class="pp-J4BRQW8H5Q6MY" type="submit" value="Pay Now" />
-                                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                                    </form>
-                                </div>
-                                <p class="payment-note">Instant payment with credit card or PayPal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Package 2 -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Application Ready Series</h3>
-                        <div class="price">€40<span>/package</span></div>
-                    </div>
-                    <div class="pricing-body">
-                        <p><strong>3 Intensive Preparation Sessions</strong></p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Interview preparation strategies</li>
-                            <li><i class="fas fa-check"></i> Cultural interview coaching</li>
-                            <li><i class="fas fa-check"></i> Application process guidance</li>
-                            <li><i class="fas fa-check"></i> Personal action plan creation</li>
-                        </ul>
-                        
-                        <div class="paypal-section">
-                            <h4><i class="fab fa-paypal"></i> Secure Payment - €40</h4>
-                            <div class="paypal-button-container">
-                                <div>
-                                    <style>.pp-Q3494PNKAR63E{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                                    <form action="https://www.paypal.com/ncp/payment/Q3494PNKAR63E" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                                        <input class="pp-Q3494PNKAR63E" type="submit" value="Pay Now" />
-                                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                                    </form>
-                                </div>
-                                <p class="payment-note">Instant payment with credit card or PayPal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Package 3 -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Cultural Bridge Monthly</h3>
-                        <div class="price">€20<span>/month</span></div>
-                    </div>
-                    <div class="pricing-body">
-                        <p><strong>Ongoing Group Support</strong></p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Weekly 1hr group sessions</li>
-                            <li><i class="fas fa-check"></i> German workplace culture training</li>
-                            <li><i class="fas fa-check"></i> Community support network</li>
-                            <li><i class="fas fa-check"></i> Regular Q&A sessions</li>
-                        </ul>
-                        
-                        <div class="paypal-section">
-                            <h4><i class="fab fa-paypal"></i> Monthly Access - €20</h4>
-                            <div class="paypal-button-container">
-                                <div>
-                                    <style>.pp-2ZTG7ZYK4VJTG{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                                    <form action="https://www.paypal.com/ncp/payment/2ZTG7ZYK4VJTG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                                        <input class="pp-2ZTG7ZYK4VJTG" type="submit" value="Pay Now" />
-                                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                                    </form>
-                                </div>
-                                <p class="payment-note">One-time monthly payment</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Package 4 -->
-                <div class="pricing-card premium">
-                    <div class="pricing-badge">Complete Solution</div>
-                    <div class="pricing-header">
-                        <h3>Tech Bridge Mastery</h3>
-                        <div class="price">€120<span>/complete</span></div>
-                    </div>
-                    <div class="pricing-body">
-                        <p><strong>Full Package: Career + Technical Training</strong></p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> <strong>Everything in Application Ready</strong></li>
-                            <li><i class="fas fa-check"></i> <strong>Basic tech skills training</strong></li>
-                            <li><i class="fas fa-check"></i> Access to learning materials</li>
-                            <li><i class="fas fa-check"></i> Portfolio project guidance</li>
-                            <li><i class="fas fa-check"></i> <strong>Certificate of Completion</strong></li>
-                        </ul>
-                        
-                        <div class="paypal-section">
-                            <h4><i class="fab fa-paypal"></i> Complete Package - €120</h4>
-                            <div class="paypal-button-container">
-                                <div>
-                                    <style>.pp-BTLSFFUU29M34{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                                    <form action="https://www.paypal.com/ncp/payment/BTLSFFUU29M34" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-                                        <input class="pp-BTLSFFUU29M34" type="submit" value="Pay Now" />
-                                        <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-                                    </form>
-                                </div>
-                                <p class="payment-note">One-time payment for full package</p>
-                            </div>
+                    <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Secure Payment – €25</h4>
+                        <div class="pp-wrap">
+                            <style>.pp-J4BRQW8H5Q6MY{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                            <form action="https://www.paypal.com/ncp/payment/J4BRQW8H5Q6MY" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-J4BRQW8H5Q6MY" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <p class="pay-note">Instant payment with credit card or PayPal</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="cta-box">
-                <h3>Book Your Free Consultation</h3>
-                <p>Fill out the form below to schedule a <strong>free 30-minute consultation</strong>. Get personalized advice and ask questions—no obligation.</p>
-                
-                <form action="https://formspree.io/f/mldqkdqz" method="POST" id="webinarForm" class="webinar-form">
-                    <input type="hidden" name="_subject" value="New Consultation Request - Techie Bridge">
-                    <input type="hidden" name="_replyto" value="asktechiebridge@gmail.com">
-                    <input type="text" name="_gotcha" style="display:none">
-                    
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required>
+            <!-- Package 2 -->
+            <div class="pc feat">
+                <div class="badge">Most Popular</div>
+                <div class="pc-hdr"><h3>Application Ready Series</h3><div class="price-num">€40<span>/package</span></div></div>
+                <div class="pc-body">
+                    <p><strong>3 Intensive Preparation Sessions</strong></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Interview preparation strategies</li>
+                        <li><i class="fas fa-check"></i> Cultural interview coaching</li>
+                        <li><i class="fas fa-check"></i> Application process guidance</li>
+                        <li><i class="fas fa-check"></i> Personal action plan creation</li>
+                    </ul>
+                    <div class="pkg-faq">
+                        <div class="pkg-faq-row"><i class="fas fa-clock"></i><span><strong>Session length:</strong> 3 × 45-minute sessions over 1–2 weeks</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-envelope"></i><span><strong>After payment:</strong> Confirmation email + scheduling link within 2 hours</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-file-alt"></i><span><strong>Includes:</strong> CV/cover letter feedback between sessions</span></div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Secure Payment – €40</h4>
+                        <div class="pp-wrap">
+                            <style>.pp-Q3494PNKAR63E{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                            <form action="https://www.paypal.com/ncp/payment/Q3494PNKAR63E" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-Q3494PNKAR63E" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <p class="pay-note">Instant payment with credit card or PayPal</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="currentLocation">Current Location *</label>
-                        <select id="currentLocation" name="currentLocation" required>
-                            <option value="">Select your situation</option>
-                            <option value="Germany">Currently living in Germany</option>
-                            <option value="EU">Elsewhere in Europe</option>
-                            <option value="Africa">In Africa</option>
-                            <option value="Asia">In Asia</option>
-                            <option value="Americas">In North/South America</option>
-                            <option value="Other">Other</option>
-                        </select>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="pc">
+                <div class="pc-hdr"><h3>Cultural Bridge Monthly</h3><div class="price-num">€20<span>/month</span></div></div>
+                <div class="pc-body">
+                    <p><strong>Ongoing Group Support</strong></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Weekly 1hr group sessions</li>
+                        <li><i class="fas fa-check"></i> German workplace culture training</li>
+                        <li><i class="fas fa-check"></i> Community support network</li>
+                        <li><i class="fas fa-check"></i> Regular Q&amp;A sessions</li>
+                    </ul>
+                    <div class="pkg-faq">
+                        <div class="pkg-faq-row"><i class="fas fa-clock"></i><span><strong>Session length:</strong> 1 hour weekly group session</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-envelope"></i><span><strong>After payment:</strong> Group invite + welcome email within 24 hours</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-users"></i><span><strong>Format:</strong> Small group (max 10) for quality interaction</span></div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="background">Your Background</label>
-                        <select id="background" name="background">
-                            <option value="">Select closest match</option>
-                            <option value="Student">Student</option>
-                            <option value="Recent Graduate">Recent Graduate</option>
-                            <option value="Career Changer">Career Changer</option>
-                            <option value="Tech Professional">Tech Professional</option>
-                            <option value="Other Professional">Other Professional</option>
-                        </select>
+                    <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Monthly Access – €20</h4>
+                        <div class="pp-wrap">
+                            <style>.pp-2ZTG7ZYK4VJTG{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                            <form action="https://www.paypal.com/ncp/payment/2ZTG7ZYK4VJTG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-2ZTG7ZYK4VJTG" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <p class="pay-note">One-time monthly payment</p>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="goal">Primary Goal *</label>
-                        <select id="goal" name="goal" required>
-                            <option value="">What's your main goal?</option>
-                            <option value="Find IT Job in Germany">Find an IT job in Germany</option>
-                            <option value="Study IT in Germany">Study IT in Germany</option>
-                            <option value="Ausbildung Apprenticeship">Start an Ausbildung (Apprenticeship)</option>
-                            <option value="Career Advice">Get career advice for the German market</option>
-                            <option value="Other">Other</option>
-                        </select>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="pc prem">
+                <div class="badge">Complete Solution</div>
+                <div class="pc-hdr"><h3>Tech Bridge Mastery</h3><div class="price-num">€120<span>/complete</span></div></div>
+                <div class="pc-body">
+                    <p><strong>Full Package: Career + Technical Training</strong></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Everything in Application Ready</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Basic tech skills training</strong></li>
+                        <li><i class="fas fa-check"></i> Access to learning materials</li>
+                        <li><i class="fas fa-check"></i> Portfolio project guidance</li>
+                        <li><i class="fas fa-check"></i> <strong>Certificate of Completion</strong></li>
+                    </ul>
+                    <div class="pkg-faq">
+                        <div class="pkg-faq-row"><i class="fas fa-clock"></i><span><strong>Duration:</strong> 6–8 sessions over 4 weeks</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-envelope"></i><span><strong>After payment:</strong> Full onboarding email within 24 hours</span></div>
+                        <div class="pkg-faq-row"><i class="fas fa-certificate"></i><span><strong>Includes:</strong> Certificate of Completion + LinkedIn recommendation</span></div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Specific Questions or Challenges?</label>
-                        <textarea id="message" name="message" rows="3" placeholder="Tell us about your situation, background, or any specific challenges you're facing..."></textarea>
+                    <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Complete Package – €120</h4>
+                        <div class="pp-wrap">
+                            <style>.pp-BTLSFFUU29M34{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                            <form action="https://www.paypal.com/ncp/payment/BTLSFFUU29M34" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-BTLSFFUU29M34" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <p class="pay-note">One-time payment for full package</p>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn">Request Free Consultation</button>
-                    <p class="form-note">We'll contact you within 24 hours to schedule your session.</p>
-                </form>
+                </div>
+            </div>
+        </div><!-- /price-grid -->
+
+        <!-- Consultation Form -->
+        <div class="cta-box">
+            <h3 class="gt">Book Your Free Consultation</h3>
+            <p>Fill out the form below to schedule a <strong>free 30-minute consultation</strong>. Get personalised advice and ask questions — no obligation.</p>
+
+            <div id="formSuccess" class="success-banner" style="display:none">
+                <div class="success-inner">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="success-text">
+                        <h4>🎉 Request Received!</h4>
+                        <p>Thank you for reaching out. We'll contact you within <strong>24 hours</strong> to schedule your free consultation. Check your inbox (and spam just in case).</p>
+                        <p>In the meantime feel free to reach us on <a href="https://wa.me/491773713831" target="_blank" rel="noopener">WhatsApp</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/mldqkdqz" method="POST" id="webinarForm" class="wform">
+                <input type="hidden" name="_subject" value="New Consultation Request - Techie Bridge">
+                <input type="hidden" name="_replyto" value="asktechiebridge@gmail.com">
+                <input type="text" name="_gotcha" style="display:none">
+                <div class="fg"><label for="name">Your Name *</label><input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. John Doe"></div>
+                <div class="fg"><label for="email">Email Address *</label><input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com"></div>
+                <div class="fg"><label for="currentLocation">Current Location *</label>
+                    <select id="currentLocation" name="currentLocation" required>
+                        <option value="">Select your situation</option>
+                        <option value="Germany">Currently living in Germany</option>
+                        <option value="EU">Elsewhere in Europe</option>
+                        <option value="Africa">In Africa</option>
+                        <option value="Asia">In Asia</option>
+                        <option value="Americas">In North/South America</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="fg"><label for="background">Your Background</label>
+                    <select id="background" name="background">
+                        <option value="">Select closest match</option>
+                        <option value="Student">Student</option>
+                        <option value="Recent Graduate">Recent Graduate</option>
+                        <option value="Career Changer">Career Changer</option>
+                        <option value="Tech Professional">Tech Professional</option>
+                        <option value="Other Professional">Other Professional</option>
+                    </select>
+                </div>
+                <div class="fg"><label for="goal">Primary Goal *</label>
+                    <select id="goal" name="goal" required>
+                        <option value="">What's your main goal?</option>
+                        <option value="Find IT Job in Germany">Find an IT job in Germany</option>
+                        <option value="Study IT in Germany">Study IT in Germany</option>
+                        <option value="Ausbildung Apprenticeship">Start an Ausbildung (Apprenticeship)</option>
+                        <option value="Career Advice">Get career advice for the German market</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="fg"><label for="message">Specific Questions or Challenges?</label><textarea id="message" name="message" rows="3" placeholder="Tell us about your situation or any challenges you're facing..."></textarea></div>
+                <button type="submit" class="btn">Request Free Consultation</button>
+                <p class="form-note">We'll contact you within 24 hours to schedule your session.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+    <div class="container">
+        <h2 class="sh gt">Frequently Asked Questions</h2>
+        <p class="sub">Got questions? We've answered the most common ones below. Still unsure? <a href="#pricing" class="faq-link">Book the free consultation.</a></p>
+        <div class="faq-grid">
+            <div class="faq-col">
+                <h3 class="faq-cat"><i class="fas fa-globe"></i> Before You Start</h3>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">What if I'm not in Germany yet? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Absolutely no problem! Many of our clients are still abroad planning their move. We have a dedicated track for people relocating to Germany that covers everything: visa options, the Ausbildung vs university decision, documents to prepare, and how to start applying before you even arrive.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I need German language skills? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>It depends on your goal. Most Ausbildung programs and traditional German companies require at least B1 German. However, English-speaking roles exist at international companies. We help you identify which paths are realistic for your current level while advising on how to improve your German for better long-term opportunities.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">I have no tech background. Can I still get into IT? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Yes! Germany's Ausbildung system is specifically designed to train people from scratch. If you're willing to commit 2–3 years to an apprenticeship, you can enter IT with just a secondary school certificate and the right mindset. We help career changers find the most accessible entry points.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does the German job search take? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Realistically expect 3–6 months for most IT roles. German employers are thorough — applications require detailed documents and interviews include cultural fit assessments. With proper preparation, you can significantly reduce this timeline and avoid common mistakes that get international applicants rejected.</p></div></div>
+            </div>
+            <div class="faq-col">
+                <h3 class="faq-cat"><i class="fas fa-euro-sign"></i> Payments & Packages</h3>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">What happens after I pay? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Within 2 hours of payment (usually faster!), you'll receive a confirmation email at the address linked to your PayPal account. This email includes a scheduling link — pick a time that suits you. Evenings and weekends are available (CET). For the Tech Bridge Mastery package, you'll receive a full onboarding email with your complete schedule within 24 hours.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">How long is each session? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p><strong>Pathfinder Workshop:</strong> 60 minutes. <strong>Application Ready Series:</strong> 3 × 45-minute sessions. <strong>Cultural Bridge Monthly:</strong> Weekly 60-minute group sessions. <strong>Tech Bridge Mastery:</strong> 6–8 sessions over 4 weeks. All sessions are online via Zoom or Google Meet.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I get a refund? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Yes. If you contact us within 48 hours of payment and before your first session, we offer a full refund — no questions asked. After a session has been completed, refunds cannot be issued for that session. For multi-session packages, unused sessions can be refunded on a pro-rata basis. Email <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a>.</p></div></div>
+                <div class="faq-item"><button class="faq-q" aria-expanded="false">Is the free consultation really free? <i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>100% free — no credit card, no obligation. The free 30-minute consultation is our way of making sure we're a good fit before any money changes hands. You'll leave with at least one actionable piece of advice even if you never buy a package.</p></div></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section - FIXED: Proper decoration styling -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Start Your Journey Today</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p><strong>We are not just teaching technology; we are building careers and opening doors.</strong></p>
-                    
-                    <div class="contact-details">
-                        <p><i class="fas fa-envelope"></i> 
-                            <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a>
-                        </p>
-                        <p><i class="fas fa-phone"></i> 
-                            <a href="tel:+491773713831">+49 177 3713831</a>
-                        </p>
-                        <p><i class="fas fa-map-marker-alt"></i> Neustadt in Holstein, Schleswig-Holstein, Germany</p>
-                        <p><i class="fas fa-clock"></i> Available for consultations on weekends and evenings (CET)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- FIXED: Proper decoration section -->
-            <div class="contact-decoration">
-                <div class="decoration-item">
-                    <i class="fas fa-hands-helping"></i>
-                    <span>Guidance</span>
-                </div>
-                <div class="decoration-item">
-                    <i class="fas fa-bridge"></i>
-                    <span>Connection</span>
-                </div>
-                <div class="decoration-item">
-                    <i class="fas fa-seedling"></i>
-                    <span>Growth</span>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="sh gt">Start Your Journey Today</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>We are not just teaching technology; we are building careers and opening doors.</strong></p>
+                <div class="c-details">
+                    <p><i class="fas fa-envelope"></i><a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i><a href="tel:+491773713831">+49 177 3713831</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Neustadt in Holstein, Schleswig-Holstein, Germany</p>
+                    <p><i class="fas fa-clock"></i> Available on weekends and evenings (CET)</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Techie Bridge. Guiding international talent to tech careers in Germany.</p>
-            <div class="social-links">
-                <a href="https://tiktok.com/@techie.bridge" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://wa.me/491773713831?text=Hello%20Techie%20Bridge%21%20I%20saw%20your%20website%20and%20would%20like%20more%20information." title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+        <div class="c-deco">
+            <div class="deco-item"><i class="fas fa-hands-helping"></i><span>Guidance</span></div>
+            <div class="deco-item"><i class="fas fa-link"></i><span>Connection</span></div>
+            <div class="deco-item"><i class="fas fa-seedling"></i><span>Growth</span></div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Techie Bridge. Guiding international talent to tech careers in Germany.</p>
+        <div class="soc">
+            <a href="https://tiktok.com/@techie.bridge" title="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/491773713831?text=Hello%20Techie%20Bridge%21%20I%20saw%20your%20website%20and%20would%20like%20more%20information." title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links'),body=document.body;
+    function close(){nav.classList.remove('active');toggle.classList.remove('active');toggle.setAttribute('aria-expanded','false');body.classList.remove('menu-open');}
+    function open(){nav.classList.add('active');toggle.classList.add('active');toggle.setAttribute('aria-expanded','true');body.classList.add('menu-open');}
+    toggle.addEventListener('click',function(e){e.stopPropagation();nav.classList.contains('active')?close():open();});
+    document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{if(window.innerWidth<=768)close();});});
+    document.addEventListener('click',e=>{if(window.innerWidth<=768&&!nav.contains(e.target)&&!toggle.contains(e.target))close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    window.addEventListener('resize',()=>{if(window.innerWidth>768)close();});
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',function(e){
+            const id=this.getAttribute('href');
+            if(id==='#'||id==='')return;
+            const t=document.querySelector(id);
+            if(t){e.preventDefault();if(window.innerWidth<=768)close();const off=document.querySelector('#mainNav').offsetHeight+20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});history.pushState(null,null,id);}
+        });
+    });
+
+    const mainNav=document.querySelector('#mainNav');
+    function onScroll(){
+        mainNav.classList.toggle('scrolled',window.scrollY>80);
+        const pos=window.scrollY+140;let cur='';
+        document.querySelectorAll('section').forEach(s=>{if(pos>=s.offsetTop&&pos<s.offsetTop+s.clientHeight)cur=s.id;});
+        document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href').substring(1)===cur);});
+    }
+    let tick=false;
+    window.addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(()=>{onScroll();tick=false;});tick=true;}});
+    onScroll();
+
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+        btn.addEventListener('click',function(){
+            const ans=this.nextElementSibling,isOpen=this.getAttribute('aria-expanded')==='true';
+            const col=this.closest('.faq-col');
+            if(col){col.querySelectorAll('.faq-q').forEach(q=>{q.setAttribute('aria-expanded','false');q.nextElementSibling.classList.remove('open');});}
+            if(!isOpen){this.setAttribute('aria-expanded','true');ans.classList.add('open');}
+        });
+    });
+
+    const form=document.getElementById('webinarForm'),banner=document.getElementById('formSuccess');
+    if(form){
+        form.addEventListener('submit',async function(e){
+            e.preventDefault();
+            const btn=this.querySelector('button[type="submit"]'),orig=btn.innerHTML;
+            btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending…';btn.disabled=true;
+            const fd=new FormData(this),data=Object.fromEntries(fd.entries());
+            if(!data.name||!data.email||!data.currentLocation||!data.goal){showMsg('Please fill in all required fields.','error');btn.innerHTML=orig;btn.disabled=false;return;}
+            try{
+                const res=await fetch(this.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+                if(res.ok){this.style.display='none';if(banner){banner.style.display='block';banner.scrollIntoView({behavior:'smooth',block:'center'});}this.reset();}
+                else{throw new Error();}
+            }catch(err){showMsg('There was an error. Please try again or email asktechiebridge@gmail.com','error');}
+            finally{btn.innerHTML=orig;btn.disabled=false;}
+        });
+        function showMsg(text,type){
+            document.querySelector('.fi-msg')?.remove();
+            const m=document.createElement('div');m.className='fi-msg';
+            m.style.cssText='padding:.9rem 1.1rem;margin:.7rem 0;border-radius:10px;background:'+(type==='success'?'#064e3b':'#450a0a')+';color:'+(type==='success'?'#a7f3d0':'#fca5a5')+';border:1px solid '+(type==='success'?'#10b981':'#ef4444')+';font-size:.93rem;line-height:1.5;display:flex;gap:.6rem;align-items:flex-start;';
+            m.innerHTML='<i class="fas fa-exclamation-circle" style="margin-top:.15rem;flex-shrink:0"></i>'+text;
+            form.querySelector('button[type="submit"]').before(m);
+        }
+    }
+
+    const io=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='translateY(0)';}});},{threshold:.08});
+    document.querySelectorAll('.svc-card,.req-card,.pc,.aud-card,.test-card,.faq-item').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(22px)';c.style.transition='opacity .55s ease,transform .55s ease';io.observe(c);});
+
+    document.querySelectorAll('.soc a').forEach(a=>{a.addEventListener('click',function(e){if(this.getAttribute('href')==='#'){e.preventDefault();alert('This link is coming soon!');}});});
+    setTimeout(()=>document.body.classList.add('loaded'),100);
+});
+</script>
 </body>
 </html>
