@@ -57,7 +57,7 @@
 
     /* ── HERO ── */
     .hero { background:var(--grad); text-align:center; padding:11rem 0 7rem; margin-top:68px; position:relative; overflow:hidden; }
-    .hero::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80') center/cover; opacity:.12; mix-blend-mode:overlay; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 50%, rgba(0,0,0,0.15) 0%, transparent 70%), radial-gradient(ellipse at 80% 20%, rgba(0,0,0,0.1) 0%, transparent 60%); }
     .hero .container { position:relative; z-index:2; }
     .hero h1 { font-size:3.6rem; font-weight:800; color:#000; line-height:1.2; margin-bottom:1.4rem; text-shadow:2px 2px 10px rgba(0,0,0,.15); animation:fadeUp 1s ease both; }
     .hero p { font-size:1.25rem; font-weight:600; color:#000; max-width:680px; margin:0 auto 2.8rem; opacity:.92; animation:fadeUp 1s .2s ease both; }
@@ -286,6 +286,7 @@
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="relocate.html" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800">🇳🇬→🇩🇪 Guide</a></li>
         </ul>
         <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
             <i class="fas fa-bars"></i>
@@ -293,8 +294,17 @@
     </div>
 </nav>
 
+<!-- ANNOUNCEMENT BANNER -->
+<div style="background:var(--grad);text-align:center;padding:.7rem 1rem;margin-top:65px;position:relative;z-index:900">
+  <a href="relocate.html" style="text-decoration:none;color:#000;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:center">
+    <span>🇳🇬 ✈️ 🇩🇪</span>
+    <span><strong>NEW:</strong> Complete Nigeria → Germany Relocation Guide — Every visa, every document, official links.</span>
+    <span style="background:#000;color:var(--secondary);padding:.2rem .8rem;border-radius:20px;font-size:.82rem">Read Free Guide →</span>
+  </a>
+</div>
+
 <!-- HERO -->
-<section id="home" class="hero">
+<section id="home" class="hero" style="margin-top:0">
     <div class="container">
         <h1>Building Tech Careers in Germany</h1>
         <p>From anywhere to everywhere. We guide international talent to success in Europe's strongest tech market.</p>
@@ -324,7 +334,74 @@
                 <p><strong>Why It Works:</strong> Our approach is not theoretical. It is built on the lived experience of crossing this bridge successfully.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="International collaboration in technology" loading="lazy">
+                <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(37,99,235,.25);border:8px solid #1a1a1a;display:block">
+                  <defs>
+                    <linearGradient id="bgG" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#0d1117"/>
+                      <stop offset="100%" style="stop-color:#1a1a2e"/>
+                    </linearGradient>
+                    <linearGradient id="blueG" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#2563eb"/>
+                      <stop offset="100%" style="stop-color:#667eea"/>
+                    </linearGradient>
+                    <linearGradient id="goldG" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#f59e0b"/>
+                      <stop offset="100%" style="stop-color:#fbbf24"/>
+                    </linearGradient>
+                    <linearGradient id="greenG" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#10b981"/>
+                      <stop offset="100%" style="stop-color:#34d399"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Background -->
+                  <rect width="600" height="420" fill="url(#bgG)" rx="12"/>
+                  <!-- Grid lines -->
+                  <g stroke="rgba(37,99,235,0.12)" stroke-width="1">
+                    <line x1="0" y1="60" x2="600" y2="60"/><line x1="0" y1="120" x2="600" y2="120"/>
+                    <line x1="0" y1="180" x2="600" y2="180"/><line x1="0" y1="240" x2="600" y2="240"/>
+                    <line x1="0" y1="300" x2="600" y2="300"/><line x1="0" y1="360" x2="600" y2="360"/>
+                    <line x1="100" y1="0" x2="100" y2="420"/><line x1="200" y1="0" x2="200" y2="420"/>
+                    <line x1="300" y1="0" x2="300" y2="420"/><line x1="400" y1="0" x2="400" y2="420"/>
+                    <line x1="500" y1="0" x2="500" y2="420"/>
+                  </g>
+                  <!-- Map shape Nigeria → Germany arc -->
+                  <path d="M 155 280 Q 300 100 445 155" stroke="url(#goldG)" stroke-width="2.5" fill="none" stroke-dasharray="8,5" opacity="0.7"/>
+                  <!-- Plane along the arc -->
+                  <text x="298" y="148" font-size="22" text-anchor="middle" transform="rotate(-30,298,148)">✈️</text>
+                  <!-- Nigeria dot -->
+                  <circle cx="155" cy="285" r="14" fill="url(#goldG)" opacity="0.9"/>
+                  <text x="155" y="290" font-size="14" text-anchor="middle" fill="#000" font-weight="800">🇳🇬</text>
+                  <text x="155" y="312" font-size="11" text-anchor="middle" fill="#f59e0b" font-weight="700">Nigeria</text>
+                  <!-- Germany dot -->
+                  <circle cx="445" cy="160" r="14" fill="url(#blueG)" opacity="0.9"/>
+                  <text x="445" y="165" font-size="14" text-anchor="middle" fill="#fff">🇩🇪</text>
+                  <text x="445" y="183" font-size="11" text-anchor="middle" fill="#93c5fd" font-weight="700">Germany</text>
+                  <!-- Central glowing badge -->
+                  <rect x="210" y="185" width="180" height="68" rx="14" fill="url(#blueG)" opacity="0.15"/>
+                  <rect x="210" y="185" width="180" height="68" rx="14" fill="none" stroke="url(#blueG)" stroke-width="1.5"/>
+                  <text x="300" y="208" font-size="11" text-anchor="middle" fill="#93c5fd" font-weight="700" letter-spacing="2">TECHIE BRIDGE</text>
+                  <text x="300" y="230" font-size="17" text-anchor="middle" fill="#ffffff" font-weight="800">🌍 → 💻 → 🇩🇪</text>
+                  <text x="300" y="247" font-size="10" text-anchor="middle" fill="#94a3b8">Building Tech Careers in Germany</text>
+                  <!-- Stats floating cards -->
+                  <rect x="30" y="50" width="120" height="58" rx="10" fill="#1a1a1a" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
+                  <text x="90" y="72" font-size="10" text-anchor="middle" fill="#6ee7b7" font-weight="700" letter-spacing="1">AUSBILDUNG</text>
+                  <text x="90" y="92" font-size="20" text-anchor="middle" fill="#10b981" font-weight="800">€900+</text>
+                  <text x="90" y="103" font-size="9" text-anchor="middle" fill="#94a3b8">Monthly salary</text>
+                  <rect x="450" y="50" width="120" height="58" rx="10" fill="#1a1a1a" stroke="rgba(245,158,11,0.4)" stroke-width="1.5"/>
+                  <text x="510" y="72" font-size="10" text-anchor="middle" fill="#fde68a" font-weight="700" letter-spacing="1">VISA PATHS</text>
+                  <text x="510" y="92" font-size="20" text-anchor="middle" fill="#f59e0b" font-weight="800">5+</text>
+                  <text x="510" y="103" font-size="9" text-anchor="middle" fill="#94a3b8">Ways to move</text>
+                  <rect x="30" y="310" width="120" height="58" rx="10" fill="#1a1a1a" stroke="rgba(37,99,235,0.4)" stroke-width="1.5"/>
+                  <text x="90" y="332" font-size="10" text-anchor="middle" fill="#93c5fd" font-weight="700" letter-spacing="1">TUITION</text>
+                  <text x="90" y="352" font-size="20" text-anchor="middle" fill="#2563eb" font-weight="800">FREE</text>
+                  <text x="90" y="363" font-size="9" text-anchor="middle" fill="#94a3b8">University in Germany</text>
+                  <rect x="450" y="310" width="120" height="58" rx="10" fill="#1a1a1a" stroke="rgba(139,92,246,0.4)" stroke-width="1.5"/>
+                  <text x="510" y="332" font-size="10" text-anchor="middle" fill="#c4b5fd" font-weight="700" letter-spacing="1">EXPERIENCE</text>
+                  <text x="510" y="352" font-size="20" text-anchor="middle" fill="#8b5cf6" font-weight="800">REAL</text>
+                  <text x="510" y="363" font-size="9" text-anchor="middle" fill="#94a3b8">Guidance from Eric</text>
+                  <!-- Bottom label -->
+                  <text x="300" y="405" font-size="10" text-anchor="middle" fill="rgba(148,163,184,0.6)">From Nigeria to a Tech Career in Germany</text>
+                </svg>
             </div>
         </div>
     </div>
@@ -408,7 +485,7 @@
         </div>
 
         <div class="aud-grid">
-            <div class="aud-card"><i class="fas fa-globe-africa"></i><h3>For Talent Relocating to Germany</h3><p>Get a complete roadmap to understand requirements, prepare documents, and build a compelling profile for German educational and career opportunities.</p></div>
+            <div class="aud-card"><i class="fas fa-globe-africa"></i><h3>For Talent Relocating to Germany</h3><p>Get a complete roadmap to understand requirements, prepare documents, and build a compelling profile for German educational and career opportunities.</p><a href="relocate.html" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;background:var(--grad);color:#000;font-weight:700;font-size:.9rem;padding:.6rem 1.3rem;border-radius:50px;text-decoration:none;transition:all .3s"><i class="fas fa-map-signs"></i> Free Nigeria → Germany Guide</a></div>
             <div class="aud-card"><i class="fas fa-user-graduate"></i><h3>For Internationals Already in Germany</h3><p>You've made it to Germany. Now, let's conquer the job market. We help you decode workplace culture, refine applications for local employers, and ace technical interviews.</p></div>
         </div>
 
@@ -418,7 +495,7 @@
 
         <div class="price-grid">
             <!-- Package 1 -->
-            <div class="pc">
+            <div class="pc" id="pathfinder">
                 <div class="pc-hdr"><h3>Pathfinder Workshop</h3><div class="price-num">€25<span>/session</span></div></div>
                 <div class="pc-body">
                     <p><strong>Live Workshop: "Tech Careers in Germany 101"</strong></p>
@@ -436,14 +513,23 @@
                     <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Secure Payment – €25</h4>
                         <div class="pp-wrap">
                             <style>.pp-J4BRQW8H5Q6MY{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/J4BRQW8H5Q6MY" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-J4BRQW8H5Q6MY" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <form action="https://www.paypal.com/ncp/payment/J4BRQW8H5Q6MY" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-J4BRQW8H5Q6MY" type="submit" value="Pay Now"><span style="font-size:.75rem;color:#94a3b8;display:block;margin-top:.3rem">💳 Visa · Mastercard · PayPal</span></form>
                             <p class="pay-note">Instant payment with credit card or PayPal</p>
                         </div>
+                    </div>
+                    <div style="margin-top:1rem;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:1rem 1.1rem">
+                        <p style="font-size:.8rem;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem"><i class="fas fa-university"></i>&nbsp; Nigerian Bank Transfer (UBA)</p>
+                        <div style="font-size:.85rem;color:#a7f3d0;line-height:2">
+                            <div><span style="color:#94a3b8">Account Name:</span>&nbsp; <strong style="color:#e5e7eb">Osatohanmwen Eric Ighodaro</strong></div>
+                            <div><span style="color:#94a3b8">Account Number:</span>&nbsp; <strong style="color:#e5e7eb">2170549514</strong></div>
+                            <div><span style="color:#94a3b8">Bank:</span>&nbsp; <strong style="color:#e5e7eb">United Bank for Africa (UBA)</strong></div>
+                        </div>
+                        <p style="font-size:.78rem;color:#6ee7b7;margin-top:.7rem"><i class="fas fa-info-circle"></i>&nbsp; After transfer, send proof of payment to <a href="mailto:asktechiebridge@gmail.com" style="color:#10b981;font-weight:700">asktechiebridge@gmail.com</a> or via <a href="https://wa.me/491773713831" style="color:#10b981;font-weight:700">WhatsApp</a></p>
                     </div>
                 </div>
             </div>
             <!-- Package 2 -->
-            <div class="pc feat">
+            <div class="pc feat" id="application-ready">
                 <div class="badge">Most Popular</div>
                 <div class="pc-hdr"><h3>Application Ready Series</h3><div class="price-num">€40<span>/package</span></div></div>
                 <div class="pc-body">
@@ -462,14 +548,23 @@
                     <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Secure Payment – €40</h4>
                         <div class="pp-wrap">
                             <style>.pp-Q3494PNKAR63E{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/Q3494PNKAR63E" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-Q3494PNKAR63E" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <form action="https://www.paypal.com/ncp/payment/Q3494PNKAR63E" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-Q3494PNKAR63E" type="submit" value="Pay Now"><span style="font-size:.75rem;color:#94a3b8;display:block;margin-top:.3rem">💳 Visa · Mastercard · PayPal</span></form>
                             <p class="pay-note">Instant payment with credit card or PayPal</p>
                         </div>
+                    </div>
+                    <div style="margin-top:1rem;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:1rem 1.1rem">
+                        <p style="font-size:.8rem;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem"><i class="fas fa-university"></i>&nbsp; Nigerian Bank Transfer (UBA)</p>
+                        <div style="font-size:.85rem;color:#a7f3d0;line-height:2">
+                            <div><span style="color:#94a3b8">Account Name:</span>&nbsp; <strong style="color:#e5e7eb">Osatohanmwen Eric Ighodaro</strong></div>
+                            <div><span style="color:#94a3b8">Account Number:</span>&nbsp; <strong style="color:#e5e7eb">2170549514</strong></div>
+                            <div><span style="color:#94a3b8">Bank:</span>&nbsp; <strong style="color:#e5e7eb">United Bank for Africa (UBA)</strong></div>
+                        </div>
+                        <p style="font-size:.78rem;color:#6ee7b7;margin-top:.7rem"><i class="fas fa-info-circle"></i>&nbsp; After transfer, send proof of payment to <a href="mailto:asktechiebridge@gmail.com" style="color:#10b981;font-weight:700">asktechiebridge@gmail.com</a> or via <a href="https://wa.me/491773713831" style="color:#10b981;font-weight:700">WhatsApp</a></p>
                     </div>
                 </div>
             </div>
             <!-- Package 3 -->
-            <div class="pc">
+            <div class="pc" id="study-support">
                 <div class="pc-hdr"><h3>Cultural Bridge Monthly</h3><div class="price-num">€20<span>/month</span></div></div>
                 <div class="pc-body">
                     <p><strong>Ongoing Group Support</strong></p>
@@ -487,14 +582,23 @@
                     <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Monthly Access – €20</h4>
                         <div class="pp-wrap">
                             <style>.pp-2ZTG7ZYK4VJTG{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/2ZTG7ZYK4VJTG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-2ZTG7ZYK4VJTG" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <form action="https://www.paypal.com/ncp/payment/2ZTG7ZYK4VJTG" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-2ZTG7ZYK4VJTG" type="submit" value="Pay Now"><span style="font-size:.75rem;color:#94a3b8;display:block;margin-top:.3rem">💳 Visa · Mastercard · PayPal</span></form>
                             <p class="pay-note">One-time monthly payment</p>
                         </div>
+                    </div>
+                    <div style="margin-top:1rem;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:1rem 1.1rem">
+                        <p style="font-size:.8rem;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem"><i class="fas fa-university"></i>&nbsp; Nigerian Bank Transfer (UBA)</p>
+                        <div style="font-size:.85rem;color:#a7f3d0;line-height:2">
+                            <div><span style="color:#94a3b8">Account Name:</span>&nbsp; <strong style="color:#e5e7eb">Osatohanmwen Eric Ighodaro</strong></div>
+                            <div><span style="color:#94a3b8">Account Number:</span>&nbsp; <strong style="color:#e5e7eb">2170549514</strong></div>
+                            <div><span style="color:#94a3b8">Bank:</span>&nbsp; <strong style="color:#e5e7eb">United Bank for Africa (UBA)</strong></div>
+                        </div>
+                        <p style="font-size:.78rem;color:#6ee7b7;margin-top:.7rem"><i class="fas fa-info-circle"></i>&nbsp; After transfer, send proof of payment to <a href="mailto:asktechiebridge@gmail.com" style="color:#10b981;font-weight:700">asktechiebridge@gmail.com</a> or via <a href="https://wa.me/491773713831" style="color:#10b981;font-weight:700">WhatsApp</a></p>
                     </div>
                 </div>
             </div>
             <!-- Package 4 -->
-            <div class="pc prem">
+            <div class="pc prem" id="mastery">
                 <div class="badge">Complete Solution</div>
                 <div class="pc-hdr"><h3>Tech Bridge Mastery</h3><div class="price-num">€120<span>/complete</span></div></div>
                 <div class="pc-body">
@@ -514,16 +618,25 @@
                     <div class="pp-sec"><h4><i class="fab fa-paypal"></i> Complete Package – €120</h4>
                         <div class="pp-wrap">
                             <style>.pp-BTLSFFUU29M34{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/BTLSFFUU29M34" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-BTLSFFUU29M34" type="submit" value="Pay Now"><img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"></form>
+                            <form action="https://www.paypal.com/ncp/payment/BTLSFFUU29M34" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:.5rem;"><input class="pp-BTLSFFUU29M34" type="submit" value="Pay Now"><span style="font-size:.75rem;color:#94a3b8;display:block;margin-top:.3rem">💳 Visa · Mastercard · PayPal</span></form>
                             <p class="pay-note">One-time payment for full package</p>
                         </div>
+                    </div>
+                    <div style="margin-top:1rem;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:1rem 1.1rem">
+                        <p style="font-size:.8rem;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem"><i class="fas fa-university"></i>&nbsp; Nigerian Bank Transfer (UBA)</p>
+                        <div style="font-size:.85rem;color:#a7f3d0;line-height:2">
+                            <div><span style="color:#94a3b8">Account Name:</span>&nbsp; <strong style="color:#e5e7eb">Osatohanmwen Eric Ighodaro</strong></div>
+                            <div><span style="color:#94a3b8">Account Number:</span>&nbsp; <strong style="color:#e5e7eb">2170549514</strong></div>
+                            <div><span style="color:#94a3b8">Bank:</span>&nbsp; <strong style="color:#e5e7eb">United Bank for Africa (UBA)</strong></div>
+                        </div>
+                        <p style="font-size:.78rem;color:#6ee7b7;margin-top:.7rem"><i class="fas fa-info-circle"></i>&nbsp; After transfer, send proof of payment to <a href="mailto:asktechiebridge@gmail.com" style="color:#10b981;font-weight:700">asktechiebridge@gmail.com</a> or via <a href="https://wa.me/491773713831" style="color:#10b981;font-weight:700">WhatsApp</a></p>
                     </div>
                 </div>
             </div>
         </div><!-- /price-grid -->
 
         <!-- Consultation Form -->
-        <div class="cta-box">
+        <div class="cta-box" id="consultation-form">
             <h3 class="gt">Book Your Free Consultation</h3>
             <p>Fill out the form below to schedule a <strong>free 30-minute consultation</strong>. Get personalised advice and ask questions — no obligation.</p>
 
@@ -618,7 +731,7 @@
                 <div class="c-details">
                     <p><i class="fas fa-envelope"></i><a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a></p>
                     <p><i class="fas fa-phone"></i><a href="tel:+491773713831">+49 177 3713831</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Schleswig-Holstein, Germany</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Neustadt in Holstein, Schleswig-Holstein, Germany</p>
                     <p><i class="fas fa-clock"></i> Available on weekends and evenings (CET)</p>
                 </div>
             </div>
@@ -634,12 +747,12 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2025 Techie Bridge. Guiding international talent to tech careers in Germany.</p>
+        <p>&copy; 2026 Techie Bridge. Guiding international talent to tech careers in Germany.</p>
         <div class="soc">
             <a href="https://tiktok.com/@techie.bridge" title="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
             <a href="https://wa.me/491773713831?text=Hello%20Techie%20Bridge%21%20I%20saw%20your%20website%20and%20would%20like%20more%20information." title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-            <a href="#" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" title="LinkedIn — Coming Soon" onclick="alert('LinkedIn page coming soon!')"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" title="Instagram — Coming Soon" onclick="alert('Instagram page coming soon!')"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
@@ -660,7 +773,7 @@ document.addEventListener('DOMContentLoaded',function(){
             const id=this.getAttribute('href');
             if(id==='#'||id==='')return;
             const t=document.querySelector(id);
-            if(t){e.preventDefault();if(window.innerWidth<=768)close();const off=document.querySelector('#mainNav').offsetHeight+20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});history.pushState(null,null,id);}
+            if(t){e.preventDefault();if(window.innerWidth<=768)close();const off=document.querySelector('#mainNav').offsetHeight+20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});}
         });
     });
 
@@ -714,6 +827,25 @@ document.addEventListener('DOMContentLoaded',function(){
     document.querySelectorAll('.soc a').forEach(a=>{a.addEventListener('click',function(e){if(this.getAttribute('href')==='#'){e.preventDefault();alert('This link is coming soon!');}});});
     setTimeout(()=>document.body.classList.add('loaded'),100);
 });
+</script>
+
+<script>
+// Scroll to specific section if hash is in URL on page load
+(function(){
+  try {
+    var hash = window.location.hash;
+    if(hash && hash.length > 1) {
+      var el = document.querySelector(hash);
+      if(el) {
+        setTimeout(function(){
+          var nav = document.querySelector('#mainNav');
+          var off = nav ? nav.offsetHeight + 20 : 85;
+          window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior:'smooth'});
+        }, 300);
+      }
+    }
+  } catch(e){}
+})();
 </script>
 </body>
 </html>
