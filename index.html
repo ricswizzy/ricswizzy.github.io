@@ -832,21 +832,27 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 <script>
-// Scroll to specific section if hash is in URL on page load
+// Scroll to hash section on page load — used by relocate.html Free Consultation button
 (function(){
-  try {
-    var hash = window.location.hash;
-    if(hash && hash.length > 1) {
-      var el = document.querySelector(hash);
-      if(el) {
-        setTimeout(function(){
-          var nav = document.querySelector('#mainNav');
-          var off = nav ? nav.offsetHeight + 20 : 85;
-          window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior:'smooth'});
-        }, 300);
-      }
-    }
-  } catch(e){}
+  function doScroll(){
+    try{
+      var hash=window.location.hash;
+      if(!hash||hash.length<=1)return;
+      var el=document.querySelector(hash);
+      if(!el)return;
+      var nav=document.querySelector('#mainNav');
+      var off=nav?nav.offsetHeight+20:85;
+      var top=el.getBoundingClientRect().top+window.scrollY-off;
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }catch(e){}
+  }
+  // Try immediately, then again after full render
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(doScroll,200);setTimeout(doScroll,600);});
+  } else {
+    setTimeout(doScroll,200);
+    setTimeout(doScroll,600);
+  }
 })();
 </script>
 </body>
