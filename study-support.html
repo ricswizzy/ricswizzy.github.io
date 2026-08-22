@@ -950,14 +950,37 @@ document.addEventListener('DOMContentLoaded',function(){
   const nav=document.querySelector('#mainNav');
   if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80),{passive:true});}
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  // Smooth scroll — robust for all hash links including Book a Session buttons
+  function scrollToId(id){
+    try{
+      var t=document.querySelector(id);
+      if(!t)return false;
+      var off=(nav?nav.offsetHeight:65)+20;
+      var top=t.getBoundingClientRect().top+window.scrollY-off;
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+      return true;
+    }catch(e){return false;}
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
-      const id=this.getAttribute('href');
-      if(id==='#'||id==='')return;
-      const t=document.querySelector(id);
-      if(t){e.preventDefault();const off=(nav?nav.offsetHeight:65)+20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});}
+      var id=this.getAttribute('href');
+      if(!id||id==='#')return;
+      var scrolled=scrollToId(id);
+      if(scrolled)e.preventDefault();
     });
+  });
+
+  // Direct handlers for Book a Session nav button and bottom CTA button
+  document.querySelectorAll('.nav-cta, .btn-dark').forEach(function(btn){
+    var href=btn.getAttribute('href');
+    if(href&&href.charAt(0)==='#'){
+      btn.addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToId(href);
+      });
+    }
   });
 
   // FAQ accordion
