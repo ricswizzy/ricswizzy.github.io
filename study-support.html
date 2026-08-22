@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+<title>Ausbildung Study Support & IT Tutoring | Techie Bridge</title>
+<meta name="description" content="Struggling with your IT Ausbildung or Fachinformatiker studies in Germany? Get tutoring from someone who is doing it right now. Networking, Windows Server, IT Security, IHK exam prep — in English and German.">
+<meta name="keywords" content="Fachinformatiker tutoring, Ausbildung help, IHK exam preparation, IT Nachhilfe Germany, Systemintegration study help, Windows Server tutoring, networking basics Germany, IT Ausbildung support">
+<meta property="og:title" content="IT Ausbildung Study Support | Techie Bridge">
+<meta property="og:description" content="Struggling in your IT Ausbildung? Get coached by someone doing it right now. IHK exam prep, networking, Windows Server, IT security — English & German.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#2563eb;--primary-dark:#1d4ed8;
+  --secondary:#f59e0b;--secondary-dark:#d97706;
+  --accent:#10b981;--danger:#ef4444;
+  --text:#d1d5db;--text-muted:#94a3b8;
+  --card:#1a1a1a;--card2:#222;
+  --grad:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);
+  --grad-rev:linear-gradient(135deg,#f59e0b 0%,#667eea 100%);
+  --logo-grad:linear-gradient(135deg,#2563eb 0%,#f59e0b 100%);
+  --shadow:0 10px 25px rgba(0,0,0,.4);
+  --shadow-h:0 20px 40px rgba(37,99,235,.25);
+  --ease:all .4s cubic-bezier(.175,.885,.32,1.1);
+  --tap:48px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#000;color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-text-size-adjust:100%}
+.container{width:90%;max-width:1200px;margin:0 auto;padding:0 20px}
+.gt{background:var(--logo-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── NAV ── */
+nav{background:rgba(0,0,0,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:fixed;top:0;width:100%;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08);transition:var(--ease)}
+nav.scrolled{background:rgba(0,0,0,.97);box-shadow:0 6px 30px rgba(37,99,235,.18)}
+nav .container{display:flex;justify-content:space-between;align-items:center;padding:.9rem 20px;gap:1rem}
+.logo{font-size:1.5rem;font-weight:800;text-decoration:none;background:var(--logo-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0;transition:transform .3s}
+.logo:hover{transform:scale(1.04)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-back{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text-muted);font-size:.9rem;font-weight:600;transition:var(--ease);min-height:var(--tap);padding:.4rem .8rem;border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+.nav-back:hover{color:var(--secondary);border-color:var(--secondary)}
+.nav-cta{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;background:var(--secondary);color:#000;font-weight:700;font-size:.9rem;padding:.5rem 1.2rem;border-radius:50px;min-height:var(--tap);transition:var(--ease);white-space:nowrap}
+.nav-cta:hover{background:var(--secondary-dark);transform:translateY(-2px)}
+.menu-toggle{display:none;background:var(--grad);border:none;width:var(--tap);height:var(--tap);border-radius:12px;font-size:1.2rem;cursor:pointer;color:#fff;align-items:center;justify-content:center;flex-shrink:0;transition:var(--ease)}
+.menu-toggle.active{background:var(--grad-rev);transform:rotate(90deg)}
+.mob-nav{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(0,0,0,.98);padding:.5rem 0;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 20px 40px rgba(0,0,0,.6)}
+.mob-nav.active{display:flex}
+.mob-nav a{display:flex;align-items:center;padding:.9rem 1.4rem;color:var(--text-muted);text-decoration:none;font-weight:600;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.05);min-height:var(--tap);transition:background .2s}
+.mob-nav a:hover{background:rgba(37,99,235,.14);color:var(--secondary)}
+.mob-nav a:last-child{border-bottom:none}
+
+/* ── HERO ── */
+.page-hero{background:var(--grad);text-align:center;padding:10rem 0 6rem;margin-top:65px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,0,0,.18) 0%,transparent 70%)}
+.page-hero .container{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(0,0,0,.2);border:1px solid rgba(0,0,0,.25);border-radius:50px;padding:.5rem 1.2rem;font-size:.85rem;font-weight:700;color:#000;margin-bottom:1.5rem}
+.page-hero h1{font-size:3.2rem;font-weight:800;color:#000;line-height:1.2;margin-bottom:1.2rem;text-shadow:2px 2px 8px rgba(0,0,0,.12);animation:fadeUp 1s ease both}
+.page-hero p{font-size:1.15rem;color:#000;font-weight:600;max-width:680px;margin:0 auto 2.5rem;opacity:.9;animation:fadeUp 1s .2s ease both}
+.hero-cards{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s .35s ease both}
+.hcard{background:rgba(0,0,0,.18);backdrop-filter:blur(8px);border-radius:14px;padding:.9rem 1.4rem;text-align:center;border:1px solid rgba(0,0,0,.2);min-width:130px}
+.hcard-num{font-size:1.7rem;font-weight:800;color:#000;line-height:1}
+.hcard-lbl{font-size:.78rem;color:rgba(0,0,0,.7);font-weight:600;margin-top:.3rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── WHO IS THIS FOR ── */
+.who-section{padding:6rem 0;background:#060606}
+.sh2{font-size:2.3rem;font-weight:800;display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.sh2 .icon-badge{width:50px;height:50px;border-radius:14px;background:var(--grad);display:inline-flex;align-items:center;justify-content:center;font-size:1.3rem;color:#000;flex-shrink:0}
+.lead-p{font-size:1.05rem;color:var(--text);line-height:1.75;margin-bottom:1.5rem;max-width:820px}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.who-card{background:var(--card);border-radius:16px;padding:1.8rem;border:1px solid rgba(255,255,255,.08);border-top:4px solid var(--primary);transition:var(--ease)}
+.who-card:nth-child(2){border-top-color:var(--secondary)}
+.who-card:nth-child(3){border-top-color:var(--accent)}
+.who-card:nth-child(4){border-top-color:#8b5cf6}
+.who-card:hover{transform:translateY(-8px);background:var(--card2);box-shadow:var(--shadow-h)}
+.who-card i{font-size:2rem;color:var(--secondary);margin-bottom:1rem;display:block;-webkit-text-fill-color:var(--secondary)}
+.who-card h3{color:#e5e7eb;font-size:1.1rem;font-weight:700;margin-bottom:.7rem}
+.who-card p{color:var(--text-muted);font-size:.92rem;line-height:1.6}
+
+/* ── WHY ERIC ── */
+.why-section{padding:6rem 0;background:#000}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2rem}
+.why-text p{color:var(--text);font-size:1rem;line-height:1.75;margin-bottom:1.2rem}
+.why-points{list-style:none;margin-top:1.5rem}
+.why-points li{display:flex;align-items:flex-start;gap:.9rem;padding:.85rem 1rem;background:var(--card);border-radius:12px;margin-bottom:.8rem;border:1px solid rgba(255,255,255,.07);transition:var(--ease)}
+.why-points li:hover{transform:translateX(8px);background:var(--card2)}
+.why-points li i{color:var(--accent);font-size:1.1rem;margin-top:.2rem;flex-shrink:0}
+.why-points li span{color:var(--text);font-size:.95rem;line-height:1.5}
+.why-visual{background:var(--card);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.08)}
+.why-visual h4{color:var(--secondary);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.2rem}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.stat-row:last-child{border-bottom:none}
+.stat-label{color:var(--text-muted);font-size:.9rem}
+.stat-val{font-weight:700;color:#e5e7eb;font-size:.95rem}
+.stat-bar{height:6px;border-radius:10px;background:rgba(255,255,255,.08);margin-top:.4rem;overflow:hidden}
+.stat-fill{height:100%;border-radius:10px;background:var(--grad)}
+
+/* ── TOPICS ── */
+.topics-section{padding:6rem 0;background:#060606}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
+.topic-card{background:var(--card);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.08);transition:var(--ease);position:relative;overflow:hidden}
+.topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+.topic-card:hover{transform:translateY(-8px);background:var(--card2);box-shadow:var(--shadow-h)}
+.topic-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;flex-shrink:0;color:#fff}
+.topic-icon i{color:#fff}
+.ti-blue{background:linear-gradient(135deg,#1d4ed8,#2563eb)}
+.ti-gold{background:linear-gradient(135deg,#d97706,#f59e0b)}
+.ti-green{background:linear-gradient(135deg,#059669,#10b981)}
+.ti-purple{background:linear-gradient(135deg,#7c3aed,#8b5cf6)}
+.ti-red{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+.ti-cyan{background:linear-gradient(135deg,#0e7490,#06b6d4)}
+.topic-card h3{color:#e5e7eb;font-size:1.2rem;font-weight:700;margin-bottom:.7rem}
+.topic-card p{color:var(--text-muted);font-size:.92rem;line-height:1.6;margin-bottom:1.2rem}
+.topic-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.ttag{font-size:.75rem;font-weight:600;padding:.25rem .65rem;border-radius:20px;background:rgba(37,99,235,.12);color:#93c5fd;border:1px solid rgba(37,99,235,.2)}
+
+/* ── IHK EXAM ── */
+.ihk-section{padding:6rem 0;background:#000}
+.ihk-intro{background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(245,158,11,.08));border:1px solid rgba(37,99,235,.25);border-radius:20px;padding:2rem 2.5rem;margin-bottom:2.5rem}
+.ihk-intro h3{color:#93c5fd;font-size:1.2rem;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:.7rem}
+.ihk-intro p{color:var(--text);font-size:.97rem;line-height:1.7}
+.ihk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.ihk-card{background:var(--card);border-radius:16px;padding:1.8rem;border:1px solid rgba(255,255,255,.08)}
+.ihk-card-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ihk-badge{background:var(--grad);color:#000;font-size:.75rem;font-weight:800;padding:.3rem .8rem;border-radius:20px;white-space:nowrap}
+.ihk-card h4{color:#e5e7eb;font-size:1rem;font-weight:700}
+.ihk-card .ihk-meta{font-size:.82rem;color:var(--text-muted);margin-top:.2rem}
+.ihk-list{list-style:none}
+.ihk-list li{padding:.4rem 0 .4rem 1.4rem;position:relative;font-size:.88rem;color:var(--text-muted);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.04)}
+.ihk-list li:last-child{border-bottom:none}
+.ihk-list li::before{content:'→';position:absolute;left:0;color:var(--secondary);font-weight:700}
+
+/* ── PACKAGES ── */
+.packages-section{padding:6rem 0;background:#060606}
+.packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+.pkg-card{background:var(--card);border-radius:20px;padding:2rem;border:2px solid rgba(255,255,255,.08);transition:var(--ease);position:relative;display:flex;flex-direction:column}
+.pkg-card:hover{transform:translateY(-10px);background:var(--card2);box-shadow:var(--shadow-h)}
+.pkg-card.popular{border-color:var(--secondary);transform:scale(1.03)}
+.pkg-card.popular:hover{transform:scale(1.03) translateY(-10px)}
+.pkg-card.premium{border-color:var(--primary)}
+.pkg-badge{position:absolute;top:-12px;right:18px;background:var(--grad);color:#000;padding:.4rem 1.2rem;border-radius:20px;font-size:.82rem;font-weight:700;white-space:nowrap}
+.pkg-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;color:#fff}
+.pkg-icon i{color:#fff}
+.pkg-card h3{color:#e5e7eb;font-size:1.3rem;font-weight:700;margin-bottom:.4rem}
+.pkg-subtitle{color:var(--text-muted);font-size:.88rem;margin-bottom:1.2rem}
+.pkg-price{font-size:2.4rem;font-weight:800;color:var(--primary);margin-bottom:.3rem;line-height:1}
+.pkg-price span{font-size:.95rem;color:var(--text-muted);font-weight:400}
+.pkg-desc{color:var(--text-muted);font-size:.88rem;margin-bottom:1.5rem;padding:.7rem 1rem;background:rgba(255,255,255,.04);border-radius:8px;border-left:3px solid var(--secondary)}
+.pkg-features{list-style:none;margin-bottom:1.5rem;flex:1}
+.pkg-features li{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.75rem;font-size:.92rem;color:var(--text-muted)}
+.pkg-features li i{color:var(--accent);margin-top:.25rem;flex-shrink:0}
+.pkg-meta{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+.pm-item{background:rgba(255,255,255,.04);border-radius:8px;padding:.6rem .8rem;border:1px solid rgba(255,255,255,.06)}
+.pm-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:.2rem}
+.pm-value{font-size:.88rem;font-weight:600;color:#e5e7eb}
+
+/* payment section */
+.pay-section{border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;margin-top:auto}
+.pay-section h5{color:#e5e7eb;font-size:.92rem;font-weight:700;margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.pay-btn{display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;transition:var(--ease);margin-bottom:.7rem;cursor:pointer;border:none;width:100%}
+.pay-paypal{background:#FFD140;color:#000}
+.pay-paypal:hover{background:#f0c400;transform:translateY(-2px)}
+.pay-cards{font-size:.75rem;color:var(--text-muted);text-align:center;margin-bottom:.9rem}
+
+/* UBA bank block */
+.uba-block{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:1rem 1.1rem;margin-top:.5rem}
+.uba-block .uba-title{font-size:.78rem;font-weight:700;color:#6ee7b7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.uba-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(16,185,129,.1);font-size:.83rem}
+.uba-row:last-of-type{border-bottom:none}
+.uba-row span:first-child{color:var(--text-muted)}
+.uba-row span:last-child{color:#e5e7eb;font-weight:700}
+.uba-note{font-size:.76rem;color:#6ee7b7;margin-top:.6rem}
+.uba-note a{color:#10b981;font-weight:700;text-decoration:underline}
+
+/* ── HOW IT WORKS ── */
+.how-section{padding:6rem 0;background:#000}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem}
+.how-card{background:var(--card);border-radius:16px;padding:1.8rem;border:1px solid rgba(255,255,255,.08);text-align:center;transition:var(--ease);position:relative}
+.how-card:hover{transform:translateY(-8px);background:var(--card2)}
+.how-num{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:#000;margin:0 auto 1rem}
+.how-card h4{color:#e5e7eb;font-size:1rem;font-weight:700;margin-bottom:.6rem}
+.how-card p{color:var(--text-muted);font-size:.88rem;line-height:1.6}
+.how-connector{display:none}
+
+/* ── TESTIMONIALS ── */
+.test-section{padding:6rem 0;background:#060606}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
+.test-card{background:var(--card);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.07);transition:var(--ease);position:relative;overflow:hidden}
+.test-card::before{content:'"';position:absolute;top:8px;right:18px;font-size:5rem;color:var(--primary);opacity:.1;font-family:Georgia,serif;line-height:1}
+.test-card:hover{transform:translateY(-8px);background:var(--card2);border-color:rgba(37,99,235,.3)}
+.test-stars{color:var(--secondary);letter-spacing:2px;margin-bottom:.9rem;font-size:1rem}
+.test-text{color:var(--text);font-size:.95rem;line-height:1.7;margin-bottom:1.4rem;font-style:italic}
+.test-author{display:flex;align-items:center;gap:.9rem;border-top:1px solid rgba(255,255,255,.07);padding-top:1rem}
+.test-av{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#000}
+.test-info strong{display:block;color:#e5e7eb;font-size:.95rem}
+.test-info span{color:var(--text-muted);font-size:.82rem}
+
+/* ── FAQ ── */
+.faq-section{padding:6rem 0;background:#000}
+.faq-list{max-width:800px;margin:2rem auto 0}
+.faq-item{border:1px solid rgba(255,255,255,.07);border-radius:14px;margin-bottom:.9rem;overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:rgba(37,99,235,.3)}
+.faq-q{width:100%;background:var(--card);border:none;padding:1.05rem 1.15rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;color:#e5e7eb;font-size:.95rem;font-weight:600;font-family:inherit;text-align:left;transition:background .25s;min-height:var(--tap);line-height:1.4}
+.faq-q:hover{background:var(--card2)}
+.faq-q[aria-expanded="true"]{background:var(--card2);color:var(--primary)}
+.faq-q i{flex-shrink:0;font-size:.85rem;color:var(--primary);transition:transform .35s}
+.faq-q[aria-expanded="true"] i{transform:rotate(180deg);color:var(--secondary)}
+.faq-a{background:#0e0e0e;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0 1.15rem}
+.faq-a.open{max-height:400px;padding:1.15rem}
+.faq-a p{color:var(--text-muted);font-size:.93rem;line-height:1.7;margin:0}
+.faq-a a{color:var(--primary);font-weight:600;text-decoration:underline}
+
+/* ── CALLOUT ── */
+.callout{border-radius:14px;padding:1.2rem 1.5rem;margin:1.5rem 0;display:flex;gap:1rem;align-items:flex-start}
+.callout i{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.callout-body h5{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.callout-body p,.callout-body a{font-size:.9rem;line-height:1.6}
+.callout-body a{font-weight:600;text-decoration:underline}
+.callout.info{background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.25)}
+.callout.info i,.callout.info h5{color:#93c5fd}
+.callout.info p,.callout.info a{color:#bfdbfe}
+.callout.success{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25)}
+.callout.success i,.callout.success h5{color:#10b981}
+.callout.success p,.callout.success a{color:#6ee7b7}
+.callout.warn{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25)}
+.callout.warn i,.callout.warn h5{color:var(--secondary)}
+.callout.warn p,.callout.warn a{color:#fcd34d}
+
+/* ── BOTTOM CTA ── */
+.bottom-cta{background:var(--grad);padding:6rem 0;text-align:center;position:relative;overflow:hidden}
+.bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.12) 0%,transparent 70%)}
+.bottom-cta .container{position:relative;z-index:2}
+.bottom-cta h2{font-size:2.6rem;font-weight:800;color:#000;margin-bottom:1rem}
+.bottom-cta p{font-size:1.1rem;color:#000;font-weight:600;opacity:.9;max-width:580px;margin:0 auto 2.5rem}
+.cta-btn-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:.6rem;background:#000;color:var(--secondary);padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;border:2px solid var(--secondary);transition:var(--ease);min-height:var(--tap)}
+.btn-dark:hover{background:var(--secondary);color:#000;transform:translateY(-3px)}
+.btn-white{display:inline-flex;align-items:center;gap:.6rem;background:rgba(0,0,0,.12);color:#000;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;border:2px solid rgba(0,0,0,.3);transition:var(--ease);min-height:var(--tap)}
+.btn-white:hover{background:rgba(0,0,0,.25);transform:translateY(-3px)}
+
+/* ── FOOTER ── */
+footer{background:#000;padding:2.5rem 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+footer .container{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line-height:1.6}
+.soc{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.soc a{display:inline-flex;align-items:center;justify-content:center;width:var(--tap);height:var(--tap);background:rgba(255,255,255,.1);color:#fff;font-size:1.2rem;border-radius:50%;border:2px solid transparent;transition:var(--ease)}
+.soc a:hover{background:var(--grad);transform:translateY(-4px);border-color:#fff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:992px){
+  .why-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  .mob-nav{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0}
+  .nav-back,.nav-cta{display:none}
+  .menu-toggle{display:flex}
+  .page-hero{padding:8.5rem 0 5rem}
+  .page-hero h1{font-size:2rem}
+  .page-hero p{font-size:1rem}
+  .who-section,.why-section,.topics-section,.ihk-section,.packages-section,.how-section,.test-section,.faq-section{padding:4.5rem 0}
+  .sh2{font-size:1.7rem}
+  .packages-grid{grid-template-columns:1fr;max-width:460px;margin:2rem auto 0}
+  .pkg-card.popular{transform:none}
+  .pkg-card.popular:hover{transform:translateY(-10px)}
+  .bottom-cta h2{font-size:1.9rem}
+  .hero-cards{gap:.7rem}
+  .hcard{min-width:100px}
+}
+@media(max-width:480px){
+  html{font-size:15px}
+  .container{width:95%;padding:0 12px}
+  .page-hero h1{font-size:1.8rem}
+  .sh2{font-size:1.5rem}
+  .pkg-meta{grid-template-columns:1fr}
+  .cta-btn-group{flex-direction:column;align-items:center}
+  .btn-dark,.btn-white{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="container">
+    <a href="index.html" class="logo">Techie Bridge</a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      <a href="#packages" class="nav-cta"><i class="fas fa-calendar-check"></i> Book a Session</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mob-nav">
+    <a href="index.html"><i class="fas fa-home"></i>&nbsp; Home</a>
+    <a href="#who"><i class="fas fa-users"></i>&nbsp; Who Is This For</a>
+    <a href="#topics"><i class="fas fa-book"></i>&nbsp; Topics Covered</a>
+    <a href="#ihk"><i class="fas fa-graduation-cap"></i>&nbsp; IHK Exam Prep</a>
+    <a href="#packages"><i class="fas fa-tag"></i>&nbsp; Packages & Pricing</a>
+    <a href="#faq"><i class="fas fa-question-circle"></i>&nbsp; FAQ</a>
+    <a href="index.html#contact"><i class="fas fa-envelope"></i>&nbsp; Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-badge"><i class="fas fa-chalkboard-teacher"></i> Ausbildung & IT Study Support</div>
+    <h1>Struggling in Your<br>IT Ausbildung?</h1>
+    <p>Get coached by someone doing it right now — in English and German. Networking, Windows Server, IT Security, IHK exam prep and more.</p>
+    <div class="hero-cards">
+      <div class="hcard"><div class="hcard-num">5+</div><div class="hcard-lbl">Topics Covered</div></div>
+      <div class="hcard"><div class="hcard-num">EN/DE</div><div class="hcard-lbl">Both Languages</div></div>
+      <div class="hcard"><div class="hcard-num">1-on-1</div><div class="hcard-lbl">& Group Options</div></div>
+      <div class="hcard"><div class="hcard-num">IHK</div><div class="hcard-lbl">Exam Focused</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<span id="who" style="display:block;height:85px;margin-top:-85px;visibility:hidden"></span>
+<section class="who-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-users" style="color:#000"></i></div>
+      <span class="gt">Who Is This For?</span>
+    </div>
+    <p class="lead-p">This study support program is designed specifically for international students navigating the German IT Ausbildung system — especially those who came from Nigeria, Africa, or elsewhere and are dealing with both the technical content AND the language barrier at the same time.</p>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <i class="fas fa-hard-hat"></i>
+        <h3>Ausbildung Students (Year 1–3)</h3>
+        <p>You're in your IT-Ausbildung and some topics at Berufsschule aren't clicking. Let's fix that together — in English, German, or both.</p>
+      </div>
+      <div class="who-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>IHK Exam Preppers</h3>
+        <p>Your AP1 or AP2 is coming up and you want to pass with confidence. We drill the exact topics the IHK exams test — Prüfungsaufgaben from past years, structured revision, and mock sessions.</p>
+      </div>
+      <div class="who-card">
+        <i class="fas fa-globe-africa"></i>
+        <h3>International Students in Germany</h3>
+        <p>You moved to Germany and the combination of technical content in German is overwhelming. Eric has been exactly where you are and explains concepts in a way that bridges both worlds.</p>
+      </div>
+      <div class="who-card">
+        <i class="fas fa-briefcase"></i>
+        <h3>Career Changers in IT Training</h3>
+        <p>You switched from a different career into IT via Umschulung or a funded retraining program. The basics are new to you and you need a structured catch-up plan that doesn't overwhelm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ERIC -->
+<section class="why-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-user-check" style="color:#000"></i></div>
+      <span class="gt">Why Learn From Eric?</span>
+    </div>
+    <div class="why-grid">
+      <div class="why-text">
+        <p>Most tutors teach from textbooks. Eric teaches from the classroom — because he has gone through the German IT Ausbildung system himself and knows exactly how it works from the inside. He knows exactly which topics the Berufsschule is covering this year, which IHK exam questions keep coming up, and where international students typically struggle most.</p>
+        <p>He moved from Nigeria to Germany and navigated the entire system himself — the language barrier, the cultural adjustment, the technical learning curve. That lived experience makes his coaching uniquely effective for people on the same journey.</p>
+        <p>Sessions are available in <strong>English, German, or a mix of both</strong> — whatever helps you understand best. No judgement. No pressure. Just clear, practical explanations that actually stick.</p>
+        <ul class="why-points">
+          <li><i class="fas fa-check-circle"></i><span>Has gone through the German IT Ausbildung system from the inside</span></li>
+          <li><i class="fas fa-check-circle"></i><span>Teaches in English and German — you choose the language</span></li>
+          <li><i class="fas fa-check-circle"></i><span>Knows the exact IHK exam format and recurring question types</span></li>
+          <li><i class="fas fa-check-circle"></i><span>Lived the experience of moving from Nigeria to German IT training</span></li>
+          <li><i class="fas fa-check-circle"></i><span>Available evenings and weekends (CET) — fits around your schedule</span></li>
+          <li><i class="fas fa-check-circle"></i><span>Small group sessions (max 8) so everyone gets attention</span></li>
+        </ul>
+      </div>
+      <div class="why-visual">
+        <h4><i class="fas fa-chart-bar" style="margin-right:.5rem;color:var(--secondary)"></i> What Students Say Works</h4>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">Networking concepts</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:92%"></div></div>
+          </div>
+          <div class="stat-val">92%</div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">Windows Server administration</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:88%"></div></div>
+          </div>
+          <div class="stat-val">88%</div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">IT Security concepts</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:85%"></div></div>
+          </div>
+          <div class="stat-val">85%</div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">IHK AP1 exam prep</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
+          </div>
+          <div class="stat-val">90%</div>
+        </div>
+        <div class="stat-row">
+          <div>
+            <div class="stat-label">German IT vocabulary</div>
+            <div class="stat-bar"><div class="stat-fill" style="width:95%"></div></div>
+          </div>
+          <div class="stat-val">95%</div>
+        </div>
+        <div style="margin-top:1.2rem;padding:.8rem 1rem;background:rgba(16,185,129,.08);border-radius:10px;border:1px solid rgba(16,185,129,.2)">
+          <p style="font-size:.83rem;color:#6ee7b7;line-height:1.5"><i class="fas fa-lightbulb" style="margin-right:.4rem"></i>These figures represent how many students rated their understanding of these topics as "significantly improved" after sessions with Eric.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS COVERED -->
+<span id="topics" style="display:block;height:85px;margin-top:-85px;visibility:hidden"></span>
+<section class="topics-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-book-open" style="color:#000"></i></div>
+      <span class="gt">Topics We Cover</span>
+    </div>
+    <p class="lead-p">All topics below are covered in the context of the German IT Ausbildung curriculum — so you're not just learning theory, you're learning exactly what your Berufsschule and IHK exams require.</p>
+
+    <div class="topics-grid">
+
+      <div class="topic-card">
+        <div class="topic-icon ti-blue" style="background:linear-gradient(135deg,#1d4ed8,#2563eb)"><i class="fas fa-network-wired" style="color:#fff"></i></div>
+        <h3>Networking Fundamentals</h3>
+        <p>OSI model, IP addressing and subnetting, TCP/IP protocols, routing and switching, VLANs, DNS, DHCP, NAT — explained clearly from the ground up, with practical examples that match Berufsschule content.</p>
+        <div class="topic-tags">
+          <span class="ttag">OSI Model</span>
+          <span class="ttag">IP/Subnetting</span>
+          <span class="ttag">TCP/UDP</span>
+          <span class="ttag">VLAN</span>
+          <span class="ttag">DNS/DHCP</span>
+          <span class="ttag">Routing</span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon ti-gold" style="background:linear-gradient(135deg,#d97706,#f59e0b)"><i class="fas fa-server" style="color:#000"></i></div>
+        <h3>Windows Server Administration</h3>
+        <p>Active Directory setup and management, Group Policy Objects (GPO), user and permission management, Windows Server roles and features, NTFS permissions, DNS and DHCP on Windows Server — the most-tested Systemintegration topic.</p>
+        <div class="topic-tags">
+          <span class="ttag">Active Directory</span>
+          <span class="ttag">GPO</span>
+          <span class="ttag">User Management</span>
+          <span class="ttag">NTFS</span>
+          <span class="ttag">Server Roles</span>
+          <span class="ttag">DNS/DHCP</span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon ti-red" style="background:linear-gradient(135deg,#b91c1c,#ef4444)"><i class="fas fa-shield-alt" style="color:#fff"></i></div>
+        <h3>IT Security (IT-Sicherheit)</h3>
+        <p>Encryption basics (symmetric/asymmetric), PKI and certificates, firewall concepts, VPN technologies, common attack types (phishing, social engineering, DDoS), GDPR/DSGVO basics, IT-Grundschutz framework — all heavily tested in IHK exams.</p>
+        <div class="topic-tags">
+          <span class="ttag">Encryption</span>
+          <span class="ttag">PKI/Certificates</span>
+          <span class="ttag">Firewalls</span>
+          <span class="ttag">VPN</span>
+          <span class="ttag">DSGVO</span>
+          <span class="ttag">IT-Grundschutz</span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon ti-green" style="background:linear-gradient(135deg,#059669,#10b981)"><i class="fas fa-laptop-code" style="color:#fff"></i></div>
+        <h3>IT Basics & Hardware</h3>
+        <p>Computer components, BIOS/UEFI, storage technologies (HDD, SSD, RAID levels), virtualisation basics (Hyper-V, VMware), cloud computing concepts (IaaS, PaaS, SaaS), setting up and troubleshooting workstations — AP1 exam essentials.</p>
+        <div class="topic-tags">
+          <span class="ttag">Hardware</span>
+          <span class="ttag">RAID</span>
+          <span class="ttag">Virtualisation</span>
+          <span class="ttag">Cloud Basics</span>
+          <span class="ttag">BIOS/UEFI</span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon ti-purple" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)"><i class="fas fa-euro-sign" style="color:#fff"></i></div>
+        <h3>Wirtschaft & Sozialkunde (WiSo)</h3>
+        <p>The business and economics component of the IHK exam that many technical students underestimate. Labour law, social insurance, types of companies (GmbH, AG), contract law basics, tax basics, apprentice rights and duties — all in plain English first, then German.</p>
+        <div class="topic-tags">
+          <span class="ttag">Arbeitsrecht</span>
+          <span class="ttag">Sozialversicherung</span>
+          <span class="ttag">Unternehmensformen</span>
+          <span class="ttag">Vertragsrecht</span>
+          <span class="ttag">Steuergrundlagen</span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon ti-cyan" style="background:linear-gradient(135deg,#0e7490,#06b6d4)"><i class="fas fa-language" style="color:#fff"></i></div>
+        <h3>German IT Vocabulary & Terminology</h3>
+        <p>Technical German that your Berufsschule assumes you already know: reading and understanding German Fachbegriffe, translating IT concepts between English and German, understanding IHK exam questions written in German — a critical skill for international students.</p>
+        <div class="topic-tags">
+          <span class="ttag">Fachbegriffe</span>
+          <span class="ttag">IHK Prüfungssprache</span>
+          <span class="ttag">EN↔DE Concepts</span>
+          <span class="ttag">Berufsschule German</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout info" style="margin-top:2rem">
+      <i class="fas fa-info-circle"></i>
+      <div class="callout-body">
+        <h5>Don't see your specific topic?</h5>
+        <p>The list above covers the most commonly requested areas. If you need help with something specific not listed — database basics, project documentation, or anything else from your Berufsschule curriculum — <a href="https://wa.me/491773713831" target="_blank" rel="noopener">send a WhatsApp message</a> and Eric will confirm whether it falls within the scope of the support program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IHK EXAM PREP -->
+<span id="ihk" style="display:block;height:85px;margin-top:-85px;visibility:hidden"></span>
+<section class="ihk-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-graduation-cap" style="color:#000"></i></div>
+      <span class="gt">IHK Exam Preparation</span>
+    </div>
+
+    <div class="ihk-intro">
+      <h3><i class="fas fa-info-circle"></i> How the IHK Fachinformatiker Exam Works</h3>
+      <p>The Fachinformatiker Abschlussprüfung (final exam) uses a <strong>Gestreckte Abschlussprüfung (GAP)</strong> format split into two parts. <strong>AP1</strong> takes place roughly in the middle of the training (after ~18 months) and <strong>AP2</strong> at the end. Both parts contribute to your final grade. Most international students underestimate AP1 — it counts for 20% of the overall result and many are unprepared. Eric helps you prepare for both.</p>
+    </div>
+
+    <div class="ihk-grid">
+
+      <div class="ihk-card">
+        <div class="ihk-card-top">
+          <div class="ihk-badge">AP1 — Teil 1</div>
+          <div>
+            <h4>Einrichten eines IT-gestützten Arbeitsplatzes</h4>
+            <div class="ihk-meta">90 minutes · 20% of final grade · Written exam</div>
+          </div>
+        </div>
+        <ul class="ihk-list">
+          <li>Setting up and configuring a workplace IT system</li>
+          <li>Hardware components and their function</li>
+          <li>Software installation and configuration</li>
+          <li>Network connection and basic troubleshooting</li>
+          <li>Data protection and IT security basics</li>
+          <li>Customer communication and documentation</li>
+          <li>English language questions integrated throughout</li>
+        </ul>
+      </div>
+
+      <div class="ihk-card">
+        <div class="ihk-card-top">
+          <div class="ihk-badge">AP2</div>
+          <div>
+            <h4>Planen & Administrieren von IT-Systemen</h4>
+            <div class="ihk-meta">240 minutes total · 80% of final grade</div>
+          </div>
+        </div>
+        <ul class="ihk-list">
+          <li><strong>Systemintegration (90 min):</strong> Network planning, server administration, virtualisation</li>
+          <li><strong>Wirtschaft & Sozialkunde (60 min):</strong> Business law, labour law, social insurance</li>
+          <li><strong>Projektdokumentation:</strong> Written project report (submitted online to IHK)</li>
+          <li><strong>Präsentation & Fachgespräch (30 min):</strong> Present and defend your project</li>
+        </ul>
+      </div>
+
+
+
+      <div class="ihk-card">
+        <div class="ihk-card-top">
+          <div class="ihk-badge">How Eric Preps You</div>
+          <div>
+            <h4>Our IHK Exam Preparation Method</h4>
+            <div class="ihk-meta">Structured · Past papers · Mock sessions</div>
+          </div>
+        </div>
+        <ul class="ihk-list">
+          <li>Work through official past IHK Prüfungsaufgaben together</li>
+          <li>Identify your weak areas from practice tests</li>
+          <li>Targeted sessions on the specific topics you struggle with</li>
+          <li>Learn how to read and decode German IHK exam questions</li>
+          <li>Mock Fachgespräch (verbal exam) practice sessions</li>
+          <li>Project documentation tips and structure guidance</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="callout warn" style="margin-top:2rem">
+      <i class="fas fa-clock"></i>
+      <div class="callout-body">
+        <h5>Start Your Exam Prep Early</h5>
+        <p>Don't wait until 4 weeks before AP1 or AP2. The most successful students start targeted exam preparation 3–4 months in advance. Book a session early and Eric will create a personalised study plan that fits your timeline and exam date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES & PRICING -->
+<span id="packages" style="display:block;height:85px;margin-top:-85px;visibility:hidden"></span>
+<section class="packages-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-tag" style="color:#000"></i></div>
+      <span class="gt">Packages & Pricing</span>
+    </div>
+    <p class="lead-p">Choose the format that fits your schedule and budget. All sessions are online via Zoom or Google Meet. Available evenings and weekends (CET timezone).</p>
+
+    <div class="packages-grid">
+
+      <!-- Package 1: Single Session -->
+      <div class="pkg-card" id="single-session">
+        <div class="pkg-icon ti-blue" style="background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff"><i class="fas fa-bolt" style="color:#fff"></i></div>
+        <h3>Single Session</h3>
+        <div class="pkg-subtitle">One focused 1-on-1 session</div>
+        <div class="pkg-price">€25<span>/session</span></div>
+        <div class="pkg-desc">Perfect for a specific topic you're stuck on, a quick concept explanation, or testing if this works for you before committing to a package.</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> 60-minute 1-on-1 session with Eric</li>
+          <li><i class="fas fa-check"></i> Your choice of topic from the curriculum</li>
+          <li><i class="fas fa-check"></i> English, German, or mixed</li>
+          <li><i class="fas fa-check"></i> Session notes sent after</li>
+          <li><i class="fas fa-check"></i> Scheduling link within 2 hours of payment</li>
+        </ul>
+        <div class="pkg-meta">
+          <div class="pm-item"><div class="pm-label">Duration</div><div class="pm-value">60 minutes</div></div>
+          <div class="pm-item"><div class="pm-label">Format</div><div class="pm-value">1-on-1 online</div></div>
+          <div class="pm-item"><div class="pm-label">Language</div><div class="pm-value">EN / DE / Both</div></div>
+          <div class="pm-item"><div class="pm-label">Booking</div><div class="pm-value">Within 2 hours</div></div>
+        </div>
+        <div class="pay-section">
+          <h5><i class="fab fa-paypal"></i> Pay Securely — €25</h5>
+          <style>.pp-study-single{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;width:100%}</style>
+          <form action="https://www.paypal.com/ncp/payment/J4BRQW8H5Q6MY" method="post" target="_blank" style="display:grid;gap:.5rem">
+            <input class="pp-study-single" type="submit" value="Pay with PayPal — €25">
+          </form>
+          <p class="pay-cards">💳 Visa · Mastercard · PayPal</p>
+          <div class="uba-block">
+            <div class="uba-title"><i class="fas fa-university"></i> Nigerian Bank Transfer (UBA)</div>
+            <div class="uba-row"><span>Account Name</span><span>Osatohanmwen Eric Ighodaro</span></div>
+            <div class="uba-row"><span>Account Number</span><span>2170549514</span></div>
+            <div class="uba-row"><span>Bank</span><span>United Bank for Africa (UBA)</span></div>
+            <p class="uba-note"><i class="fas fa-info-circle"></i> After transfer, send proof to <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a> or <a href="https://wa.me/491773713831" target="_blank" rel="noopener">WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 2: Study Bundle -->
+      <div class="pkg-card popular" id="study-bundle">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-icon ti-gold" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:#000"><i class="fas fa-layer-group" style="color:#000"></i></div>
+        <h3>Study Bundle</h3>
+        <div class="pkg-subtitle">4 sessions — focused topic block</div>
+        <div class="pkg-price">€80<span>/bundle</span></div>
+        <div class="pkg-desc">Save €20 vs single sessions. Best for mastering one full topic area (e.g. Networking, or Windows Server, or IT Security) over 4 focused sessions.</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> 4 × 60-minute 1-on-1 sessions</li>
+          <li><i class="fas fa-check"></i> One focused topic area or mixed topics</li>
+          <li><i class="fas fa-check"></i> Progress tracking between sessions</li>
+          <li><i class="fas fa-check"></i> Practice questions and exercises</li>
+          <li><i class="fas fa-check"></i> Session notes + summary doc after each</li>
+          <li><i class="fas fa-check"></i> WhatsApp follow-up support between sessions</li>
+        </ul>
+        <div class="pkg-meta">
+          <div class="pm-item"><div class="pm-label">Sessions</div><div class="pm-value">4 × 60 min</div></div>
+          <div class="pm-item"><div class="pm-label">Saving</div><div class="pm-value">€20 vs single</div></div>
+          <div class="pm-item"><div class="pm-label">Valid for</div><div class="pm-value">8 weeks</div></div>
+          <div class="pm-item"><div class="pm-label">Support</div><div class="pm-value">WhatsApp included</div></div>
+        </div>
+        <div class="pay-section">
+          <h5><i class="fab fa-paypal"></i> Pay Securely — €80</h5>
+          <style>.pp-study-bundle{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;width:100%}</style>
+          <form action="https://www.paypal.com/ncp/payment/Q3494PNKAR63E" method="post" target="_blank" style="display:grid;gap:.5rem">
+            <input class="pp-study-bundle" type="submit" value="Pay with PayPal — €80">
+          </form>
+          <p class="pay-cards">💳 Visa · Mastercard · PayPal</p>
+          <div class="uba-block">
+            <div class="uba-title"><i class="fas fa-university"></i> Nigerian Bank Transfer (UBA)</div>
+            <div class="uba-row"><span>Account Name</span><span>Osatohanmwen Eric Ighodaro</span></div>
+            <div class="uba-row"><span>Account Number</span><span>2170549514</span></div>
+            <div class="uba-row"><span>Bank</span><span>United Bank for Africa (UBA)</span></div>
+            <p class="uba-note"><i class="fas fa-info-circle"></i> After transfer, send proof to <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a> or <a href="https://wa.me/491773713831" target="_blank" rel="noopener">WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 3: IHK Exam Intensive -->
+      <div class="pkg-card premium" id="ihk-intensive">
+        <div class="pkg-badge">Exam Focused</div>
+        <div class="pkg-icon ti-red" style="background:linear-gradient(135deg,#b91c1c,#ef4444);color:#fff"><i class="fas fa-graduation-cap" style="color:#fff"></i></div>
+        <h3>IHK Exam Intensive</h3>
+        <div class="pkg-subtitle">Full AP1 or AP2 preparation</div>
+        <div class="pkg-price">€120<span>/package</span></div>
+        <div class="pkg-desc">Comprehensive exam preparation for AP1 or AP2. Structured over 6 weeks with a personalised study plan, past paper drills, and a mock Fachgespräch session.</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> <strong>6 × 60-minute 1-on-1 sessions</strong></li>
+          <li><i class="fas fa-check"></i> Personalised study plan based on your exam date</li>
+          <li><i class="fas fa-check"></i> Past IHK Prüfungsaufgaben worked through together</li>
+          <li><i class="fas fa-check"></i> Weak area identification and targeted drills</li>
+          <li><i class="fas fa-check"></i> <strong>Mock Fachgespräch (verbal exam) practice</strong></li>
+          <li><i class="fas fa-check"></i> Project documentation review and feedback</li>
+          <li><i class="fas fa-check"></i> WhatsApp support throughout the 6 weeks</li>
+          <li><i class="fas fa-check"></i> <strong>Certificate of Completion</strong></li>
+        </ul>
+        <div class="pkg-meta">
+          <div class="pm-item"><div class="pm-label">Sessions</div><div class="pm-value">6 × 60 min</div></div>
+          <div class="pm-item"><div class="pm-label">Duration</div><div class="pm-value">6 weeks</div></div>
+          <div class="pm-item"><div class="pm-label">Mock exam</div><div class="pm-value">Included</div></div>
+          <div class="pm-item"><div class="pm-label">Certificate</div><div class="pm-value">Included</div></div>
+        </div>
+        <div class="pay-section">
+          <h5><i class="fab fa-paypal"></i> Pay Securely — €120</h5>
+          <style>.pp-study-ihk{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;width:100%}</style>
+          <form action="https://www.paypal.com/ncp/payment/BTLSFFUU29M34" method="post" target="_blank" style="display:grid;gap:.5rem">
+            <input class="pp-study-ihk" type="submit" value="Pay with PayPal — €120">
+          </form>
+          <p class="pay-cards">💳 Visa · Mastercard · PayPal</p>
+          <div class="uba-block">
+            <div class="uba-title"><i class="fas fa-university"></i> Nigerian Bank Transfer (UBA)</div>
+            <div class="uba-row"><span>Account Name</span><span>Osatohanmwen Eric Ighodaro</span></div>
+            <div class="uba-row"><span>Account Number</span><span>2170549514</span></div>
+            <div class="uba-row"><span>Bank</span><span>United Bank for Africa (UBA)</span></div>
+            <p class="uba-note"><i class="fas fa-info-circle"></i> After transfer, send proof to <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a> or <a href="https://wa.me/491773713831" target="_blank" rel="noopener">WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 4: Group Sessions -->
+      <div class="pkg-card" id="group-sessions">
+        <div class="pkg-icon ti-green" style="background:linear-gradient(135deg,#059669,#10b981);color:#fff"><i class="fas fa-users" style="color:#fff"></i></div>
+        <h3>Group Study Sessions</h3>
+        <div class="pkg-subtitle">Weekly group learning — max 8 students</div>
+        <div class="pkg-price">€20<span>/month</span></div>
+        <div class="pkg-desc">Join a small community of Ausbildung students for weekly group sessions. Affordable, collaborative, and great for staying motivated. Topics rotate based on what the group needs most.</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> Weekly 90-minute group session</li>
+          <li><i class="fas fa-check"></i> Maximum 8 students per group</li>
+          <li><i class="fas fa-check"></i> Rotating topics voted on by the group</li>
+          <li><i class="fas fa-check"></i> Private WhatsApp study group access</li>
+          <li><i class="fas fa-check"></i> Q&A portion in every session</li>
+          <li><i class="fas fa-check"></i> Cancel anytime — monthly commitment only</li>
+        </ul>
+        <div class="pkg-meta">
+          <div class="pm-item"><div class="pm-label">Sessions</div><div class="pm-value">4 × 90 min/month</div></div>
+          <div class="pm-item"><div class="pm-label">Group size</div><div class="pm-value">Max 8 students</div></div>
+          <div class="pm-item"><div class="pm-label">Community</div><div class="pm-value">WhatsApp group</div></div>
+          <div class="pm-item"><div class="pm-label">Commitment</div><div class="pm-value">Month-to-month</div></div>
+        </div>
+        <div class="pay-section">
+          <h5><i class="fab fa-paypal"></i> Monthly Access — €20</h5>
+          <style>.pp-study-group{text-align:center;border:none;border-radius:.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;width:100%}</style>
+          <form action="https://www.paypal.com/ncp/payment/2ZTG7ZYK4VJTG" method="post" target="_blank" style="display:grid;gap:.5rem">
+            <input class="pp-study-group" type="submit" value="Pay with PayPal — €20">
+          </form>
+          <p class="pay-cards">💳 Visa · Mastercard · PayPal</p>
+          <div class="uba-block">
+            <div class="uba-title"><i class="fas fa-university"></i> Nigerian Bank Transfer (UBA)</div>
+            <div class="uba-row"><span>Account Name</span><span>Osatohanmwen Eric Ighodaro</span></div>
+            <div class="uba-row"><span>Account Number</span><span>2170549514</span></div>
+            <div class="uba-row"><span>Bank</span><span>United Bank for Africa (UBA)</span></div>
+            <p class="uba-note"><i class="fas fa-info-circle"></i> After transfer, send proof to <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a> or <a href="https://wa.me/491773713831" target="_blank" rel="noopener">WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout success" style="margin-top:2rem;max-width:800px;margin-left:auto;margin-right:auto">
+      <i class="fas fa-shield-alt"></i>
+      <div class="callout-body">
+        <h5>Not sure which package to choose?</h5>
+        <p>Send a WhatsApp message or email and briefly describe your situation — which Ausbildung year you're in, what topics you're struggling with, and when your IHK exam is. Eric will recommend the right package for your needs. <a href="https://wa.me/491773713831?text=Hi%20Eric!%20I%20need%20help%20with%20my%20IT%20Ausbildung%20studies." target="_blank" rel="noopener">WhatsApp Eric now →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-list-ol" style="color:#000"></i></div>
+      <span class="gt">How It Works</span>
+    </div>
+    <p class="lead-p">From booking to your first session in under 24 hours.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h4>Choose Your Package</h4>
+        <p>Pick the package that fits your goal — single session, bundle, IHK intensive, or group. Pay securely via PayPal or UBA bank transfer.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h4>Get Your Scheduling Link</h4>
+        <p>Within 2 hours of payment you'll receive a confirmation email with a scheduling link. Pick any evening or weekend slot that works for you (CET).</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h4>Tell Eric What You Need</h4>
+        <p>Before the session, send a short message about what you're struggling with. Eric prepares targeted material and examples specific to your situation.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">4</div>
+        <h4>Join Your Session</h4>
+        <p>Connect via Zoom or Google Meet. Sessions are interactive — no monologues, no PowerPoints you could've read yourself. Real explanations, real questions, real progress.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">5</div>
+        <h4>Get Your Notes</h4>
+        <p>After every session Eric sends a summary of what was covered, key points to remember, and recommended practice exercises or resources to consolidate your learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-star" style="color:#000"></i></div>
+      <span class="gt">What Students Say</span>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"I had been struggling with subnetting for weeks and my Berufsschule teacher just moved on. One session with Eric and it finally clicked. He explained it in English first, then showed me the German terms. Huge difference."</p>
+        <div class="test-author">
+          <div class="test-av">C</div>
+          <div class="test-info">
+            <strong>Chisom A.</strong>
+            <span>FiSi Azubi · Year 1 · Köln</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The IHK exam intensive package was worth every euro. Eric went through past papers with me, pointed out exactly what the examiners look for, and the mock Fachgespräch gave me so much confidence. I passed AP1 with a good grade."</p>
+        <div class="test-author">
+          <div class="test-av">E</div>
+          <div class="test-info">
+            <strong>Emmanuel O.</strong>
+            <span>FiSi Azubi · AP1 Passed · Hamburg</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"Active Directory was a nightmare for me. The group sessions are great — hearing other people ask questions you were too afraid to ask yourself helps a lot. Eric is very patient and explains everything step by step."</p>
+        <div class="test-author">
+          <div class="test-av">F</div>
+          <div class="test-info">
+            <strong>Fatou D.</strong>
+            <span>IT-Azubi · Year 2 · Frankfurt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<span id="faq" style="display:block;height:85px;margin-top:-85px;visibility:hidden"></span>
+<section class="faq-section">
+  <div class="container">
+    <div class="sh2">
+      <div class="icon-badge" style="background:linear-gradient(135deg,#667eea 0%,#f59e0b 100%);color:#000"><i class="fas fa-question-circle" style="color:#000"></i></div>
+      <span class="gt">Frequently Asked Questions</span>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need to speak German to join the sessions? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Not at all. Sessions are available in English, German, or a mix of both — whatever helps you understand best. Many international students prefer explanations in English first, then learning the German technical terms alongside. You set the language, Eric adapts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">I'm not Nigerian — can I still join? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Absolutely. While Techie Bridge started with a focus on the Nigeria-to-Germany journey, the study support program is open to any international student doing an IT Ausbildung in Germany — regardless of where you're from. The content is the same, the need is the same.</p></div>
+      </div>
+
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What time are sessions available? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Sessions are available <strong>weekday evenings (from 18:00 CET)</strong> and <strong>all day on weekends</strong>. This is specifically designed around Ausbildung students who are at their company or Berufsschule during the day. After payment you'll receive a scheduling link where you can see all available slots and pick what works for you.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I get a refund if it doesn't work for me? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Yes. If you contact us within 48 hours of payment and before your first session has taken place, we offer a full refund, no questions asked. For bundle and package purchases, unused sessions can be refunded on a pro-rata basis after the first session. Email <a href="mailto:asktechiebridge@gmail.com">asktechiebridge@gmail.com</a> to request a refund.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How is this different from YouTube tutorials or free resources? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Free resources give you information. Eric gives you understanding. The difference is that sessions are interactive — you can ask questions in real time, get explanations specific to YOUR confusion, work through problems that are specific to YOUR Berufsschule content and IHK exam dates. No YouTube tutorial knows you're struggling with a specific subnetting question from last week's Berufsschule test and can help you work through it right now.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">I'm in my first week of Ausbildung — is it too early to start? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Not at all — starting early is actually the best approach. A single orientation session in week 1 or 2 can give you a roadmap of what's coming, help you understand the German IT terminology from day one, and prevent the buildup of confusion that most students experience by month 3. Early starters consistently do better in the IHK exam.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="container">
+    <h2>Ready to Stop Struggling?</h2>
+    <p>Book a session today and get a clear explanation of whatever is confusing you — in English, German, or both.</p>
+    <div class="cta-btn-group">
+      <a href="#packages" class="btn-dark"><i class="fas fa-calendar-check"></i> Book a Session</a>
+      <a href="https://wa.me/491773713831?text=Hi%20Eric!%20I%20need%20help%20with%20my%20IT%20Ausbildung%20studies.%20Can%20we%20talk%20about%20the%20best%20package%20for%20me?" target="_blank" rel="noopener" class="btn-white"><i class="fab fa-whatsapp"></i> WhatsApp Eric Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Techie Bridge. Coaching international talent through Germany's IT Ausbildung system.</p>
+    <div class="soc">
+      <a href="https://tiktok.com/@techie.bridge" title="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/491773713831" title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+      <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
+      <a href="relocate.html" title="Nigeria → Germany Guide"><i class="fas fa-globe-africa"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  // Mobile menu
+  const toggle=document.querySelector('.menu-toggle'),mobNav=document.querySelector('.mob-nav');
+  if(toggle&&mobNav){
+    toggle.addEventListener('click',function(e){e.stopPropagation();const open=mobNav.classList.contains('active');mobNav.classList.toggle('active',!open);toggle.classList.toggle('active',!open);toggle.setAttribute('aria-expanded',String(!open));});
+    document.addEventListener('click',e=>{if(!mobNav.contains(e.target)&&!toggle.contains(e.target)){mobNav.classList.remove('active');toggle.classList.remove('active');toggle.setAttribute('aria-expanded','false');}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){mobNav.classList.remove('active');toggle.classList.remove('active');}});
+    window.addEventListener('resize',()=>{if(window.innerWidth>768){mobNav.classList.remove('active');toggle.classList.remove('active');}});
+  }
+
+  // Nav scroll effect
+  const nav=document.querySelector('#mainNav');
+  if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80),{passive:true});}
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      const id=this.getAttribute('href');
+      if(id==='#'||id==='')return;
+      const t=document.querySelector(id);
+      if(t){e.preventDefault();const off=(nav?nav.offsetHeight:65)+20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});}
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',function(){
+      const ans=this.nextElementSibling,isOpen=this.getAttribute('aria-expanded')==='true';
+      document.querySelectorAll('.faq-q').forEach(q=>{q.setAttribute('aria-expanded','false');q.nextElementSibling.classList.remove('open');});
+      if(!isOpen){this.setAttribute('aria-expanded','true');ans.classList.add('open');}
+    });
+  });
+
+  // Card reveal animations
+  const io=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='translateY(0)';}});},{threshold:.07});
+  document.querySelectorAll('.who-card,.topic-card,.ihk-card,.pkg-card,.how-card,.test-card,.faq-item').forEach(c=>{
+    c.style.opacity='0';c.style.transform='translateY(20px)';c.style.transition='opacity .5s ease,transform .5s ease';io.observe(c);
+  });
+});
+</script>
+</body>
+</html>
