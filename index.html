@@ -297,12 +297,42 @@
 </nav>
 
 <!-- ANNOUNCEMENT BANNER -->
-<div style="background:var(--grad);text-align:center;padding:.7rem 1rem;margin-top:65px;position:relative;z-index:900">
-  <a href="german-lessons.html" style="text-decoration:none;color:#000;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-right:1.5rem"><span>🇩🇪</span><span><strong>NEW:</strong> German Lessons A1–B1 — taught in English, goal-focused for Nigeria → Germany</span><span style="background:#000;color:var(--secondary);padding:.2rem .8rem;border-radius:20px;font-size:.82rem">See Lessons →</span></a><a href="study-support.html" style="text-decoration:none;color:#000;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-right:1.5rem"><span>📚</span><span>NEW: IT Ausbildung Study Support — IHK prep, Networking, Windows Server & more</span><span style="background:#000;color:var(--secondary);padding:.2rem .8rem;border-radius:20px;font-size:.82rem">See Packages →</span></a><a href="relocate.html" style="text-decoration:none;color:#000;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:center">
-    <span>🇳🇬 ✈️ 🇩🇪</span>
-    <span><strong>NEW:</strong> Complete Nigeria → Germany Relocation Guide — Every visa, every document, official links.</span>
-    <span style="background:#000;color:var(--secondary);padding:.2rem .8rem;border-radius:20px;font-size:.82rem">Read Free Guide →</span>
-  </a>
+<style>
+.ann-banner{background:var(--grad);padding:.6rem 1rem;margin-top:65px;position:relative;z-index:900}
+.ann-inner{display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+.ann-item{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;color:#000;font-weight:700;font-size:.88rem;padding:.35rem 0;white-space:nowrap}
+.ann-item span.ann-text{white-space:normal;font-size:.82rem;max-width:260px;line-height:1.3}
+.ann-pill{background:#000;color:var(--secondary);padding:.2rem .75rem;border-radius:20px;font-size:.78rem;font-weight:700;white-space:nowrap;flex-shrink:0}
+.ann-sep{color:rgba(0,0,0,.3);font-size:1.2rem;padding:0 .2rem;flex-shrink:0}
+@media(max-width:768px){
+  .ann-inner{flex-direction:column;gap:0;align-items:stretch}
+  .ann-item{padding:.55rem .5rem;border-bottom:1px solid rgba(0,0,0,.12);gap:.6rem}
+  .ann-item:last-child{border-bottom:none}
+  .ann-item span.ann-text{max-width:none;flex:1;font-size:.85rem}
+  .ann-sep{display:none}
+  .ann-pill{align-self:flex-end}
+}
+</style>
+<div class="ann-banner">
+  <div class="ann-inner">
+    <a href="german-lessons.html" class="ann-item">
+      <span>🇩🇪</span>
+      <span class="ann-text"><strong>German Lessons A1–B1</strong> — taught in English for Nigeria → Germany</span>
+      <span class="ann-pill">See Lessons →</span>
+    </a>
+    <span class="ann-sep">|</span>
+    <a href="study-support.html" class="ann-item">
+      <span>📚</span>
+      <span class="ann-text"><strong>IT Ausbildung Study Support</strong> — IHK prep, Networking & more</span>
+      <span class="ann-pill">See Packages →</span>
+    </a>
+    <span class="ann-sep">|</span>
+    <a href="relocate.html" class="ann-item">
+      <span>🇳🇬✈️🇩🇪</span>
+      <span class="ann-text"><strong>Nigeria → Germany Guide</strong> — Every visa, every document, official links</span>
+      <span class="ann-pill">Read Guide →</span>
+    </a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -310,7 +340,7 @@
     <div class="container">
         <h1>Building Tech Careers in Germany</h1>
         <p>From anywhere to everywhere. We guide international talent to success in Europe's strongest tech market.</p>
-        <a href="#price-list" class="btn">Explore Services</a>
+        <a href="#services" class="btn">Explore Services</a>
     </div>
 </section>
 
