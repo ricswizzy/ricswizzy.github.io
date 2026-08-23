@@ -747,7 +747,7 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
       <i class="fas fa-map-marker-alt"></i>
       <div class="callout-body">
         <h5>Where to Take the Exam in Nigeria</h5>
-        <p>The official Goethe-Institut Nigeria is located at <strong>7 Anifowoshe Street, Victoria Island, Lagos</strong>. Exams for A1 and A2 can be booked directly on their website. For B1 and B2 in Nigeria, contact them to confirm current exam dates: <a href="https://www.goethe.de/ins/ng/en/spr/prf.html" target="_blank" rel="noopener">goethe.de/ins/ng</a>. All Goethe-Zertifikat certificates do not expire.</p>
+        <p>The official Goethe-Institut Nigeria is located at <strong>7 Anifowoshe Street, Victoria Island, Lagos</strong>. Exams for A1 and A2 can be booked directly on their website. For B1 and B2 in Nigeria, contact them to confirm current exam dates: <a href="https://www.goethe.de/ins/ng/en/spr/prf.html" target="_blank" rel="noopener">goethe.de/ins/ng</a>.</p>
       </div>
     </div>
 
@@ -762,7 +762,6 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
         </div>
         <div class="exam-detail-row"><span>Duration</span><span>65 minutes total</span></div>
         <div class="exam-detail-row"><span>Pass mark</span><span>60% in each module</span></div>
-        <div class="exam-detail-row"><span>Validity</span><span>Does not expire</span></div>
         <div class="exam-detail-row"><span>Accepted for</span><span>Family reunion visa, basic proof</span></div>
         <div class="exam-parts">
           <div class="exam-part"><span>Lesen (Reading)</span><span>20 min</span></div>
@@ -782,7 +781,6 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
         </div>
         <div class="exam-detail-row"><span>Duration</span><span>~75 minutes total</span></div>
         <div class="exam-detail-row"><span>Pass mark</span><span>60% in each module</span></div>
-        <div class="exam-detail-row"><span>Validity</span><span>Does not expire</span></div>
         <div class="exam-detail-row"><span>Accepted for</span><span>Building language proof, Chancenkarte points</span></div>
         <div class="exam-parts">
           <div class="exam-part"><span>Lesen (Reading)</span><span>25 min</span></div>
@@ -802,7 +800,6 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
         </div>
         <div class="exam-detail-row"><span>Duration</span><span>~3 hours total</span></div>
         <div class="exam-detail-row"><span>Pass mark</span><span>60% in each module</span></div>
-        <div class="exam-detail-row"><span>Validity</span><span>Does not expire</span></div>
         <div class="exam-detail-row"><span>Accepted for</span><span>Ausbildung visa, Chancenkarte (3 pts), university</span></div>
         <div class="exam-parts">
           <div class="exam-part"><span>Lesen (Reading)</span><span>65 min</span></div>
@@ -1019,7 +1016,7 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
       <div class="how-card">
         <div class="how-num">2</div>
         <h4>Pay & Get Your Link</h4>
-        <p>Within 2 hours of payment you receive a scheduling link. Pick any evening or weekend slot (CET timezone).</p>
+        <p>Within 2 hours of payment you receive a confirmation email with a scheduling link. Pick a time that suits you — weekday evenings or weekends, flexible to your timezone.</p>
       </div>
       <div class="how-card">
         <div class="how-num">3</div>
@@ -1100,7 +1097,7 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">What time are lessons available? <i class="fas fa-chevron-down chevron"></i></button>
-        <div class="faq-a"><p>Lessons are available <strong>weekday evenings from 18:00 CET</strong> and <strong>all day weekends</strong>. For Nigeria (WAT timezone, which is CET−1), this means weekday evenings from 17:00 Nigeria time and weekends all day. After payment you receive a scheduling link where you choose your preferred time slot each week.</p></div>
+        <div class="faq-a"><p>Lessons are available <strong>weekdays from 7:00 PM Nigeria time</strong> and <strong>weekends from 2:00 PM Nigeria time</strong>. Timing is flexible and can be adjusted to fit the schedules of individual students — just mention your preferred time when booking. After payment you receive a scheduling link where you choose your slot.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Is the teaching really in English? <i class="fas fa-chevron-down chevron"></i></button>
@@ -1207,6 +1204,25 @@ document.addEventListener('DOMContentLoaded',function(){
     c.style.opacity='0';c.style.transform='translateY(20px)';c.style.transition='opacity .5s ease,transform .5s ease';io.observe(c);
   });
 });
+</script>
+
+<script>
+// Scroll to hash anchor on page load (handles cross-page navigation)
+(function(){
+  function doHash(){
+    try{
+      var hash=window.location.hash;
+      if(!hash||hash.length<=1)return;
+      var el=document.querySelector(hash);
+      if(!el)return;
+      var nav=document.querySelector('nav');
+      var off=nav?nav.offsetHeight+20:85;
+      window.scrollTo({top:Math.max(0,el.getBoundingClientRect().top+window.scrollY-off),behavior:'smooth'});
+    }catch(e){}
+  }
+  setTimeout(doHash,250);
+  setTimeout(doHash,700);
+})();
 </script>
 </body>
 </html>

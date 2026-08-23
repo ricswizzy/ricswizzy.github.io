@@ -1358,5 +1358,24 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.path-card,.visa-detail,.embassy-card,.provider-card,.arrival-card,.tl-item').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(20px)';c.style.transition='opacity .5s ease,transform .5s ease';io.observe(c);});
 });
 </script>
+
+<script>
+// Scroll to hash anchor on page load (handles cross-page navigation)
+(function(){
+  function doHash(){
+    try{
+      var hash=window.location.hash;
+      if(!hash||hash.length<=1)return;
+      var el=document.querySelector(hash);
+      if(!el)return;
+      var nav=document.querySelector('nav');
+      var off=nav?nav.offsetHeight+20:85;
+      window.scrollTo({top:Math.max(0,el.getBoundingClientRect().top+window.scrollY-off),behavior:'smooth'});
+    }catch(e){}
+  }
+  setTimeout(doHash,250);
+  setTimeout(doHash,700);
+})();
+</script>
 </body>
 </html>
