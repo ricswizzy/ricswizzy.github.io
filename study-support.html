@@ -251,7 +251,8 @@ footer p{color:var(--text-muted);font-size:.9rem;opacity:.8;max-width:560px;line
   .why-grid{grid-template-columns:1fr;gap:2.5rem}
 }
 @media(max-width:768px){
-  .mob-nav{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0}
+  .mob-nav{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0}
+  .mob-nav.active{display:flex}
   .nav-back,.nav-cta{display:none}
   .menu-toggle{display:flex}
   .page-hero{padding:8.5rem 0 5rem}
